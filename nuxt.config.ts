@@ -162,6 +162,10 @@ export default defineNuxtConfig({
         es: '/mi-cuenta/contrasena',
         en: '/my-account/password',
       },
+      'not-access': {
+        es: '/sin-acceso',
+        en: '/not-access',
+      },
     },
   },
 
