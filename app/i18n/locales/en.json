@@ -1,0 +1,443 @@
+{
+  "nav": {
+    "home": {
+      "label": "Home",
+      "link": "/"
+    },
+    "demo": {
+      "label": "Demo",
+      "link": "/demo"
+    },
+    "signup": {
+      "label": "Sign Up",
+      "link": "/sign-up"
+    },
+    "activate": {
+      "label": "Activate account",
+      "link": "/activate-account"
+    },
+    "login": {
+      "label": "Login",
+      "link": "/login"
+    },
+    "reset": {
+      "label": "Reset password",
+      "link": "/reset-password"
+    },
+    "users": {
+      "label": "Users",
+      "link": "/dashboard/users",
+      "new": {
+        "label": "Add user",
+        "link": "/dashboard/users/new"
+      }
+    },
+    "dashboard_news": {
+      "label": "News",
+      "link": "/dashboard/news",
+      "new": {
+        "label": "Add news",
+        "link": "/dashboard/news/new"
+      }
+    },
+    "dashboard_products": {
+      "label": "Products",
+      "link": "/dashboard/products",
+      "new": {
+        "label": "Add product",
+        "link": "/dashboard/products/new"
+      }
+    },
+    "dashboard_faqs": {
+      "label": "Frequently Asked Questions",
+      "link": "/dashboard/faqs",
+      "new": {
+        "label": "Add question",
+        "link": "/dashboard/faqs/new"
+      }
+    },
+    "dashboard_carousel": {
+      "label": "Carousel",
+      "link": "/dashboard/carousel",
+      "new": {
+        "label": "Add slide",
+        "link": "/dashboard/carousel/new"
+      }
+    },
+    "products": {
+      "label": "Products",
+      "link": "/products"
+    },
+    "news": {
+      "label": "News",
+      "link": "/news"
+    },
+    "faqs": {
+      "label": "Frequently Asked Questions",
+      "link": "/faqs"
+    },
+    "account": {
+      "label": "My Account",
+      "link": "/my-account",
+      "menu_description": "Account and dashboard navigation",
+      "profile": {
+        "label": "Profile",
+        "link": "/my-account/profile"
+      },
+      "password": {
+        "label": "Password",
+        "link": "/my-account/password"
+      }
+    },
+    "content_error": {
+      "label": "Content Error",
+      "link": "/content-error"
+    },
+    "not_access": {
+      "label": "No Access",
+      "link": "/not-access"
+    },
+    "legal": {
+      "legal_notice": {
+        "label": "Legal Notice",
+        "link": "/legal-notice"
+      },
+      "privacy_policy": {
+        "label": "Privacy Policy",
+        "link": "/privacy-policy"
+      },
+      "cookies_policy": {
+        "label": "Cookies Policy",
+        "link": "/cookies-policy"
+      }
+    }
+  },
+  "pages": {
+    "login": {
+      "seo_title": "Login",
+      "seo_description": "Log in to your My Application account.",
+      "title": "Login",
+      "forgot_pass": "Forgot your password?",
+      "login_button": "Log In",
+      "access_data_not_valid": "Access data is not valid.",
+      "logout_button": "Log Out",
+      "are_sure_logout": "Are you sure you want to log out?",
+      "logout_error": "Could not log out. Please try again.",
+      "not_account": "Don't have an account? Sign up."
+    },
+    "signup": {
+      "seo_title": "Sign Up",
+      "seo_description": "Create a new account in My Application.",
+      "title": "Sign Up",
+      "have_account": "Already have an account? Log in.",
+      "signup_success": "Your account has been created. You must activate your account through the email we have sent you.",
+      "signup_error": "Failed to create account."
+    },
+    "reset": {
+      "seo_title": "Reset Password",
+      "seo_description": "Reset your My Application account password.",
+      "title": "Reset Password",
+      "have_account": "Already have an account? Log in.",
+      "request_button": "Request Link",
+      "request_success_title": "Reset Email Sent",
+      "request_success_message": "You will receive instructions in your email to complete the process.",
+      "request_error_message": "Failed to send password recovery email.",
+      "reset_button": "Reset Password",
+      "reset_success_title": "Password Reset",
+      "reset_success_message": "You can now log in with your new password.",
+      "reset_error_message": "Failed to reset password."
+    },
+    "activate": {
+      "seo_title": "Activate Account",
+      "seo_description": "Activate your account in My Application.",
+      "title": "Activate Account",
+      "activate_button": "Activate Account",
+      "activation_error": "Failed to activate account. Please make sure the code is correct and try again."
+    },
+    "users": {
+      "seo_title": "Users",
+      "seo_description": "Check the list of users in My Application.",
+      "title": "Users",
+      "description": "Here you'll find the list of all users.",
+      "pagination_items": "users",
+      "search_placeholder": "Search by name or surname",
+      "add_user_button": "Add user",
+      "add_user_title": "Add new user",
+      "add_user_description": "Enter the new user's information.",
+      "user_created_success": "User created",
+      "user_created_error": "Error creating user",
+      "user_email_conflict_error": "Email already in use. Please choose another one.",
+      "user": {
+        "seo_description": "{name}'s profile",
+        "details_title": "User details",
+        "details_description": "Here you can view and edit the user's information.",
+        "user_update_success": "User updated",
+        "user_update_error": "Error updating user",
+        "edit_user_title": "Edit user profile",
+        "edit_user_description": "Modify the user's information.",
+        "edit_user_button": "Edit user",
+        "open_user_error": "Could not open the user's profile.",
+        "loading_user": "Loading user",
+        "delete_user_title": "Delete user",
+        "delete_user_description": "Confirm that you want to delete this user.",
+        "user_delete_success": "User deleted",
+        "user_delete_error": "Error deleting user"
+      }
+    },
+    "news": {
+      "seo_title": "News",
+      "seo_description": "Check the news about My Application.",
+      "title": "News",
+      "featured_title": "Featured news",
+      "description": "Here you'll find the latest news and updates.",
+      "pagination_items": "news"
+    },
+    "dashboard_news": {
+      "seo_title": "News",
+      "seo_description": "Check the list of news in My Application.",
+      "title": "News",
+      "description": "Here you'll find the list of all news.",
+      "pagination_items": "news",
+      "search_placeholder": "Search by title",
+      "featured_column": "Featured",
+      "add_news_button": "Add news",
+      "add_news_title": "Add new news",
+      "add_news_description": "Enter the new news item's information.",
+      "news_created_success": "News created",
+      "news_created_error": "Error creating news",
+      "news_slug_conflict_error": "Slug already in use. Please choose another one.",
+      "new": {
+        "seo_description": "Details of {title}",
+        "details_title": "News details",
+        "details_description": "Here you can view and edit the news item's information.",
+        "new_update_success": "News updated",
+        "new_update_error": "Error updating news",
+        "edit_new_title": "Edit news item",
+        "edit_new_description": "Modify the news item's information.",
+        "edit_new_button": "Edit news",
+        "open_new_error": "Could not open the news item.",
+        "loading_new": "Loading news",
+        "delete_new_title": "Delete news",
+        "delete_new_description": "Confirm that you want to delete this news item.",
+        "new_delete_success": "News deleted",
+        "new_delete_error": "Error deleting news"
+      }
+    },
+    "dashboard_faqs": {
+      "seo_title": "FAQ management",
+      "seo_description": "Manage the frequently asked questions of My Application.",
+      "title": "Frequently Asked Questions",
+      "description": "Here you will find the list of all frequently asked questions.",
+      "add_faq_button": "Add FAQ",
+      "add_faq_title": "Add New FAQ",
+      "add_faq_description": "Enter the information for the new FAQ.",
+      "faq_created_success": "FAQ created",
+      "faq_created_error": "Error creating FAQ",
+      "faq": {
+        "seo_description": "Details of the FAQ {title}",
+        "faq_update_success": "FAQ updated",
+        "faq_update_error": "Error updating FAQ",
+        "delete_faq_title": "Delete FAQ",
+        "delete_faq_description": "Confirm that you want to delete this FAQ.",
+        "faq_delete_success": "FAQ deleted",
+        "faq_delete_error": "Error deleting FAQ"
+      }
+    },
+    "faqs": {
+      "seo_title": "Frequently Asked Questions",
+      "seo_description": "Check out the frequently asked questions about My Application.",
+      "title": "Frequently Asked Questions",
+      "description": "Here you will find answers to the most common questions."
+    },
+    "dashboard_carousel": {
+      "seo_title": "Carousel management",
+      "seo_description": "Manage the home carousel slides of My Application.",
+      "title": "Carousel",
+      "description": "Here you will find the list of all carousel slides.",
+      "add_slide_button": "Add Slide",
+      "add_slide_title": "Add New Slide",
+      "add_slide_description": "Enter the information for the new slide.",
+      "slide_created_success": "Slide created",
+      "slide_created_error": "Error creating slide",
+      "slide": {
+        "seo_description": "Details of the slide {title}",
+        "add_cta_label": "Add call-to-action button",
+        "slide_update_success": "Slide updated",
+        "slide_update_error": "Error updating slide",
+        "delete_slide_title": "Delete Slide",
+        "delete_slide_description": "Confirm that you want to delete this slide.",
+        "slide_delete_success": "Slide deleted",
+        "slide_delete_error": "Error deleting slide"
+      }
+    },
+    "account": {
+      "seo_title": "My Account",
+      "seo_description": "Manage your account settings in My Application.",
+      "profile": {
+        "title": "Profile",
+        "profile_update_success": "Profile updated",
+        "profile_update_error": "Error updating profile"
+      },
+      "password": {
+        "title": "Change password",
+        "current_password_label": "Current password",
+        "current_password_placeholder": "••••••••",
+        "new_password_label": "New password",
+        "new_password_placeholder": "••••••••",
+        "change_password_button": "Change password",
+        "password_update_success": "Password changed",
+        "password_update_error": "Error changing password"
+      }
+    }
+  },
+  "pagination": {
+    "first": "First",
+    "previous": "Previous",
+    "next": "Next",
+    "last": "Last",
+    "elements": "elements",
+    "page": "Page",
+    "page_from": "Page {page} of {totalPages}",
+    "showing_items": "Showing {from} to {to} of {total} {elements}",
+    "items_per_page": "{items} per page"
+  },
+  "main": {
+    "welcome": "Welcome to our application",
+    "menu": "Menu",
+    "menu_description": "Site main navigation",
+    "select_language": "Select your language",
+    "loading": "Loading",
+    "clear_button": "Clear",
+    "close": "Close",
+    "actions": "Actions",
+    "no_results": "No results found",
+    "test_button": "Test",
+    "search": "Search",
+    "search_placeholder": "Search",
+    "view_button": "View",
+    "edit_button": "Edit",
+    "delete_button": "Delete",
+    "save_button": "Save",
+    "cancel_button": "Cancel",
+    "confirm_button": "Confirm",
+    "image": "Image",
+    "name": "Name",
+    "name_placeholder": "Name",
+    "name_required": "Name is required",
+    "surname": "Surname",
+    "surname_placeholder": "Surname",
+    "surname_required": "Surname is required",
+    "birthdate": "Birthdate",
+    "birthdate_placeholder": "DD/MM/YYYY",
+    "gender": "Gender",
+    "gender_placeholder": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "role": "Role",
+    "role_placeholder": "Role",
+    "role_admin": "Administrator",
+    "role_user": "User",
+    "password": "Password",
+    "password_placeholder": "••••••••",
+    "new_password": "New Password",
+    "confirm_password": "Confirm Password",
+    "confirm_password_placeholder": "••••••••",
+    "confirm_password_required": "Please confirm your password",
+    "password_length": "Between {min} and {max} characters",
+    "password_uppercase": "One uppercase letter",
+    "password_lowercase": "One lowercase letter",
+    "password_number": "One number",
+    "password_special": "One special character",
+    "passwords_must_match": "Passwords must match",
+    "not_valid_email": "Not a valid email",
+    "email": "Email",
+    "email_placeholder": "your email address",
+    "phone": "Phone",
+    "phone_placeholder": "Phone",
+    "number": "Number",
+    "yes": "Yes",
+    "no": "No",
+    "title": "Title",
+    "title_placeholder": "Title",
+    "title_required": "Title is required",
+    "slug": "Slug",
+    "slug_placeholder": "url-slug",
+    "slug_required": "Slug is required",
+    "slug_format_invalid": "Slug can only contain lowercase letters, numbers and hyphens",
+    "date": "Date",
+    "date_placeholder": "DD/MM/YYYY",
+    "date_required": "Date is required",
+    "featured": "Featured",
+    "short_description": "Short description",
+    "short_description_placeholder": "Short description",
+    "short_description_required": "Short description is required",
+    "description": "Description",
+    "description_placeholder": "Description",
+    "description_required": "Description is required",
+    "cta_label": "Button text",
+    "cta_label_placeholder": "Button text",
+    "cta_label_required": "Button text is required",
+    "cta_link": "Button link",
+    "cta_link_placeholder": "https://example.com or /path",
+    "cta_link_required": "Button link is required",
+    "cta_target": "Open in",
+    "cta_target_self": "Same tab",
+    "cta_target_blank": "New tab",
+    "destination": "Destination",
+    "external": "External",
+    "internal": "Internal",
+    "previous_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "go_to_slide": "Go to slide {number}",
+    "start_date": "Start date",
+    "start_date_placeholder": "Start date",
+    "end_date": "End date",
+    "end_date_placeholder": "End date",
+    "featured_filter_all": "All",
+    "featured_filter_featured": "Featured",
+    "featured_filter_not_featured": "Not featured",
+    "featured_filter_all_feminine": "All",
+    "featured_filter_featured_feminine": "Featured",
+    "featured_filter_not_featured_feminine": "Not featured",
+    "rich_text_bold": "Bold",
+    "rich_text_italic": "Italic",
+    "rich_text_strike": "Strikethrough",
+    "rich_text_underline": "Underline",
+    "rich_text_heading_2": "Heading 2",
+    "rich_text_heading_3": "Heading 3",
+    "rich_text_bullet_list": "Bullet list",
+    "rich_text_ordered_list": "Numbered list",
+    "rich_text_quote": "Quote",
+    "rich_text_align_left": "Align left",
+    "rich_text_align_center": "Align center",
+    "rich_text_align_right": "Align right",
+    "rich_text_align_justify": "Justify",
+    "rich_text_link": "Link",
+    "rich_text_link_url_placeholder": "https://example.com",
+    "rich_text_link_remove": "Remove link",
+    "rich_text_link_apply": "Apply",
+    "rich_text_undo": "Undo",
+    "rich_text_redo": "Redo",
+    "captcha_error_message": "Oops! Sorry, we couldn't verify that you're human. Please reload the page and try again. If the error persists, please try again after a few minutes.",
+    "switch_to_light_theme": "Switch to light theme",
+    "switch_to_dark_theme": "Switch to dark theme"
+  },
+  "uploader": {
+    "upload_image": "Upload image",
+    "image_uploaded": "Image uploaded",
+    "remove_image": "Remove image",
+    "max_file_info": "PNG, JPG up to {maxSize}",
+    "file_upload_error": "File upload error",
+    "invalid_file_type": "File {fileName} is not an accepted file type.",
+    "file_too_large": "The file is too large. Maximum allowed size is {maxSize}.",
+    "some_file_too_large": "Some files are too large. Maximum allowed size is {maxSize}.",
+    "max_files_info": "You can upload up to {maxFiles} files.",
+    "max_files_exceeded": "You exceeded the maximum number of allowed files ({maxFiles}).",
+    "crop_image_title": "Adjust image",
+    "crop_image_description": "Drag to move the image and use the zoom control to adjust the crop before confirming.",
+    "crop_zoom_label": "Zoom",
+    "crop_cancel": "Cancel",
+    "crop_confirm": "Apply crop"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/home/juan-fari-a-hermida/Proyectos/Base App/next-16-tailwind-4-base-app\" && echo \"=== faq related files ===\" && find . -iname \"*faq*\" -not -path \"*/node_modules/*\" -not -path \"*/.next/*\" | sort)",
+      "Read(//home/juan-fari-a-hermida/Proyectos/Base App/next-16-tailwind-4-base-app/**)"
+    ]
+  }
+}

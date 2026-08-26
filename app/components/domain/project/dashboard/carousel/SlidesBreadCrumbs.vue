@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import { ChevronRightIcon } from '@lucide/vue'
+import BreadCrumb from '@/components/domain/main/navigation/breadcrumbs/BreadCrumb.vue'
+import BreadCrumbs from '@/components/domain/main/navigation/breadcrumbs/BreadCrumbs.vue'
+
+interface LinkProp {
+  title: string
+  id?: string
+  url?: string
+}
+
+interface Props {
+  link?: LinkProp
+}
+
+const props = defineProps<Props>()
+
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+const linkUrl = computed(() => {
+  if (!props.link) return undefined
+  return props.link.url ?? `${t('nav.dashboard_carousel.link')}/${props.link.id}`
+})
+</script>
+
+<template>
+  <BreadCrumbs>
+    <BreadCrumb :url="localePath(t('nav.home.link'))" :title="t('nav.home.label')" />
+    <ChevronRightIcon class="w-4 h-4 text-neutral-400" />
+    <BreadCrumb :url="localePath(t('nav.dashboard_carousel.link'))" :title="t('nav.dashboard_carousel.label')" />
+    <template v-if="link">
+      <ChevronRightIcon class="w-4 h-4 text-neutral-400" />
+      <BreadCrumb :url="localePath(linkUrl!)" :title="link.title" />
+    </template>
+  </BreadCrumbs>
+</template>

@@ -1,0 +1,234 @@
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn-vue/tailwind.css";
+
+/* Tailwind v4 usa por defecto prefers-color-scheme para la variante "dark:".
+   Igual que en next-16-tailwind-4-base-app, se redefine para depender de la
+   clase ".dark" en <html> en vez de la preferencia del sistema — es la clase
+   que añade/quita @nuxtjs/color-mode (ThemeToggle.vue), ver CLAUDE.md. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Único token semántico de shadcn que se resuelve a un valor real, porque
+     las primitivas ui/separator, ui/dropdown-menu y ui/select dependen de
+     bg-border/border-border para pintar sus divisores. Ver la misma decisión
+     documentada en next-16-tailwind-4-base-app/.project_docs/design_system.md. */
+  --border: theme('colors.neutral.200');
+
+  /* Borde compartido por InlineFormContainer — ver [[design_system]]. */
+  --form-border: theme('colors.neutral.200');
+
+  /* Fondo/borde/texto compartidos por los controles de formulario (input,
+     select, textarea, datepicker, switch, multiselect, richtext) — ver
+     [[design_system]]. Port literal de next-16-tailwind-4-base-app. */
+  --form-item-bg: theme('colors.white');
+  --form-item-border: theme('colors.neutral.200');
+  --form-item-text: theme('colors.neutral.900');
+
+  /* Borde de AppAlertDialogContent.vue (Fase 8) — port literal. */
+  --dialog-border: theme('colors.neutral.200');
+
+  /* Fondo/borde de tarjeta de listado — primer consumidor: PublicFaqs.vue
+     (acordeón de la sección pública de faqs). Port literal. */
+  --main-card-bg: theme('colors.white');
+  --main-card-border: theme('colors.neutral.200');
+
+  /* Colores de fondo por tipo de AppToast.vue (Fase 8, vue-sonner) — fijos,
+     iguales en ambos temas, igual que en next-16-tailwind-4-base-app. */
+  --toast-success-bg: theme('colors.lime.500');
+  --toast-warning-bg: theme('colors.amber.500');
+  --toast-info-bg: theme('colors.sky.500');
+  --toast-error-bg: theme('colors.red.500');
+  --toast-text-color: theme('colors.neutral.950');
+}
+
+.dark {
+  --border: theme('colors.neutral.700');
+
+  --form-border: theme('colors.neutral.700');
+  --form-item-bg: theme('colors.neutral.800');
+  --form-item-border: theme('colors.neutral.700');
+  --form-item-text: theme('colors.neutral.200');
+
+  --dialog-border: theme('colors.neutral.700');
+
+  --main-card-bg: theme('colors.neutral.900');
+  --main-card-border: theme('colors.neutral.700');
+}
+
+@theme inline {
+  --color-border: var(--border);
+  --color-form-border: var(--form-border);
+  --color-form-item-bg: var(--form-item-bg);
+  --color-form-item-border: var(--form-item-border);
+  --color-form-item-text: var(--form-item-text);
+  --color-dialog-border: var(--dialog-border);
+  --color-main-card-bg: var(--main-card-bg);
+  --color-main-card-border: var(--main-card-border);
+}
+
+/** Escalas de color de marca — portadas literalmente de
+    next-16-tailwind-4-base-app/src/styles/globals.css. Fijas, iguales en
+    ambos temas. NO se definen aquí los tokens semánticos de shadcn
+    (bg-primary, bg-destructive, bg-accent, bg-background, bg-card,
+    bg-popover, bg-muted, --radius, --sidebar-*, --chart-*...) que trae el
+    init de shadcn-vue por defecto: se eliminan deliberadamente. El código de
+    producto nunca debe usar las variantes de color por defecto de
+    components/ui/*.vue directamente, sino los wrappers de
+    components/common/App*.vue (ver AppButton.vue). **/
+@theme {
+  --breakpoint-xs: 30rem;
+
+  --color-primary-5: #FDFEFF;
+  --color-primary-50: #EEF2FF;
+  --color-primary-100: #E0E7FF;
+  --color-primary-200: #C7D2FE;
+  --color-primary-300: #A5B4FC;
+  --color-primary-400: #818CF8;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5;
+  --color-primary-700: #4338CA;
+  --color-primary-800: #3730A3;
+  --color-primary-900: #312E81;
+  --color-primary-950: #1E1B4B;
+
+  --color-secondary-5: #F6FEFC;
+  --color-secondary-50: #F0FDFA;
+  --color-secondary-100: #CCFBF1;
+  --color-secondary-200: #99F6E4;
+  --color-secondary-300: #5EEAD4;
+  --color-secondary-400: #2DD4BF;
+  --color-secondary-500: #14B8A6;
+  --color-secondary-600: #0D9488;
+  --color-secondary-700: #0F766E;
+  --color-secondary-800: #115E59;
+  --color-secondary-900: #134E4A;
+  --color-secondary-950: #042F2E;
+}
+
+/** Portado mínimo de next-16-tailwind-4-base-app/src/styles/globals.css
+    (@layer components): solo la utilidad que consume components/common/
+    AppButton.vue. El resto de ese layer (recaptcha, scrollbars de dialog,
+    ckcontent...) se porta cuando el componente que lo usa se porte. **/
+@layer components {
+  .main-transition-color {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  /** CKContent (AppRichTextEditor) — port literal de
+      next-16-tailwind-4-base-app/src/styles/globals.css. **/
+  .ckcontent h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  .ckcontent h3 {
+    @apply text-xl font-semibold;
+  }
+
+  .ckcontent blockquote {
+    @apply relative border-l-2 border-neutral-300 dark:border-neutral-600 py-2 pl-4 ml-2 italic font-semibold text-neutral-900 dark:text-neutral-200 flex flex-row items-center gap-1;
+  }
+
+  .ckcontent blockquote::before {
+    content: "\201C";
+    @apply text-xl;
+  }
+
+  .ckcontent blockquote::after {
+    content: "\201D";
+    @apply text-xl;
+  }
+
+  .ckcontent ul {
+    @apply flex flex-col mt-0 list-disc pl-4 ml-2;
+  }
+
+  .ckcontent ol {
+    @apply flex flex-col mt-0 list-decimal pl-4 ml-2;
+  }
+
+  .ckcontent li {
+    @apply relative leading-relaxed pl-1 ml-4 whitespace-normal;
+  }
+
+  .ckcontent li ul,
+  .ckcontent li ol {
+    @apply pl-2;
+  }
+
+  .ckcontent li ul li,
+  .ckcontent li ol li {
+    @apply ml-2;
+  }
+
+  .ckcontent a {
+    @apply text-primary-400 underline hover:text-primary-300;
+  }
+
+  /* AppDatePicker (ui/calendar): equivalente a los classNames={{day, today,
+     selected, disabled}} de react-day-picker en next-16-tailwind-4-base-app.
+     El Calendar.vue de shadcn-vue (sobre reka-ui) no expone un prop
+     classNames por-parte — se targetea el mismo data-slot/data-* que ya
+     emite CalendarCellTrigger.vue en vez de forkear el componente agregado. */
+  [data-slot='calendar-cell-trigger'] {
+    @apply rounded-full transition-colors duration-300 ease-in-out;
+  }
+
+  [data-slot='calendar-cell-trigger']:hover {
+    @apply bg-primary-500 text-white;
+  }
+
+  [data-slot='calendar-cell-trigger'][data-today]:not([data-selected]) {
+    @apply bg-primary-200 text-neutral-800;
+  }
+
+  [data-slot='calendar-cell-trigger'][data-selected] {
+    @apply bg-secondary-500 text-white hover:bg-secondary-500;
+  }
+
+  [data-slot='calendar-cell-trigger'][data-disabled] {
+    @apply text-neutral-500 dark:text-neutral-400 cursor-not-allowed;
+  }
+
+  [data-slot='calendar-cell-trigger'][data-disabled]:hover {
+    @apply bg-transparent text-neutral-500 dark:text-neutral-400;
+  }
+}
+
+@layer base {
+  /* Inputs, textareas y el editor de texto enriquecido: sin anillo/offset por
+     fuera del borde; el foco por teclado se marca solo con el propio borde
+     en primary-500. !important necesario: input.vue/textarea.vue aplican su
+     propia utility "focus-visible:ring-[3px]" (capa @layer utilities), y esa
+     capa siempre gana sobre @layer base sin importar especificidad — mismo
+     comentario que en next-16-tailwind-4-base-app. */
+  input:focus-visible,
+  textarea:focus-visible,
+  .ckcontent:focus-visible {
+    box-shadow: none !important;
+    @apply border-primary-500;
+  }
+
+  /* Scrollbar oscuro para los <select> nativos de mes/año del calendario
+     (AppDatePicker, layout="month-and-year") — port literal de
+     next-16-tailwind-4-base-app, mismo selector genérico "select". */
+  select {
+    scrollbar-color: theme('colors.zinc.600') transparent;
+  }
+
+  select::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  select::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  select::-webkit-scrollbar-thumb {
+    background-color: theme('colors.zinc.600');
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}

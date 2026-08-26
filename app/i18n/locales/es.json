@@ -1,0 +1,443 @@
+{
+  "nav": {
+    "home": {
+      "label": "Inicio",
+      "link": "/"
+    },
+    "demo": {
+      "label": "Demo",
+      "link": "/demo"
+    },
+    "signup": {
+      "label": "Registrarse",
+      "link": "/crear-cuenta"
+    },
+    "activate": {
+      "label": "Activar cuenta",
+      "link": "/activar-cuenta"
+    },
+    "login": {
+      "label": "Iniciar sesión",
+      "link": "/iniciar-sesion"
+    },
+    "reset": {
+      "label": "Restablecer contraseña",
+      "link": "/restablecer-contrasena"
+    },
+    "users": {
+      "label": "Usuarios",
+      "link": "/panel/usuarios",
+      "new": {
+        "label": "Añadir usuario",
+        "link": "/panel/usuarios/nuevo"
+      }
+    },
+    "dashboard_news": {
+      "label": "Noticias",
+      "link": "/panel/noticias",
+      "new": {
+        "label": "Añadir noticia",
+        "link": "/panel/noticias/nueva"
+      }
+    },
+    "dashboard_products": {
+      "label": "Productos",
+      "link": "/panel/productos",
+      "new": {
+        "label": "Añadir producto",
+        "link": "/panel/productos/nuevo"
+      }
+    },
+    "dashboard_faqs": {
+      "label": "Preguntas frecuentes",
+      "link": "/panel/preguntas-frecuentes",
+      "new": {
+        "label": "Añadir pregunta",
+        "link": "/panel/preguntas-frecuentes/nueva"
+      }
+    },
+    "dashboard_carousel": {
+      "label": "Carrusel",
+      "link": "/panel/carrusel",
+      "new": {
+        "label": "Añadir slide",
+        "link": "/panel/carrusel/nuevo"
+      }
+    },
+    "products": {
+      "label": "Productos",
+      "link": "/productos"
+    },
+    "news": {
+      "label": "Noticias",
+      "link": "/noticias"
+    },
+    "faqs": {
+      "label": "Preguntas frecuentes",
+      "link": "/preguntas-frecuentes"
+    },
+    "account": {
+      "label": "Mi cuenta",
+      "link": "/mi-cuenta",
+      "menu_description": "Navegación de la cuenta y el panel de administración",
+      "profile": {
+        "label": "Perfil",
+        "link": "/mi-cuenta/perfil"
+      },
+      "password": {
+        "label": "Contraseña",
+        "link": "/mi-cuenta/contrasena"
+      }
+    },
+    "content_error": {
+      "label": "Error de contenido",
+      "link": "/error-contenido"
+    },
+    "not_access": {
+      "label": "Sin acceso",
+      "link": "/sin-acceso"
+    },
+    "legal": {
+      "legal_notice": {
+        "label": "Aviso legal",
+        "link": "/aviso-legal"
+      },
+      "privacy_policy": {
+        "label": "Política de privacidad",
+        "link": "/politica-de-privacidad"
+      },
+      "cookies_policy": {
+        "label": "Política de cookies",
+        "link": "/politica-de-cookies"
+      }
+    }
+  },
+  "pages": {
+    "login": {
+      "seo_title": "Iniciar sesión",
+      "seo_description": "Inicia sesión en tu cuenta de Mi Aplicación.",
+      "title": "Iniciar sesión",
+      "forgot_pass": "¿Has olvidado tu contraseña?",
+      "login_button": "Iniciar sesión",
+      "access_data_not_valid": "Los datos de acceso no son válidos.",
+      "logout_button": "Cerrar sesión",
+      "are_sure_logout": "¿Estás seguro de que deseas cerrar sesión?",
+      "logout_error": "No se ha podido cerrar la sesión. Inténtalo de nuevo.",
+      "not_account": "¿No tienes una cuenta? Regístrate."
+    },
+    "signup": {
+      "seo_title": "Registrarse",
+      "seo_description": "Crea una cuenta en Mi Aplicación.",
+      "title": "Registrarse",
+      "have_account": "¿Ya tienes una cuenta? Inicia sesión.",
+      "signup_success": "Tu cuenta ha sido creada. Debes activar tu cuenta a través del correo electrónico que te hemos enviado.",
+      "signup_error": "No se ha podido crear la cuenta."
+    },
+    "reset": {
+      "seo_title": "Restablecer contraseña",
+      "seo_description": "Restablece la contraseña de tu cuenta de Mi Aplicación.",
+      "title": "Restablecer contraseña",
+      "have_account": "¿Ya tienes una cuenta? Inicia sesión.",
+      "request_button": "Solicitar enlace",
+      "request_success_title": "Correo de restablecimiento enviado",
+      "request_success_message": "Recibirás en el correo electrónico, las instrucciones a seguir para finalizar el proceso.",
+      "request_error_message": "No se ha podido enviar el email de recuperación de contraseña.",
+      "reset_button": "Restablecer contraseña",
+      "reset_success_title": "Contraseña restablecida",
+      "reset_success_message": "Ahora puedes iniciar sesión con tu nueva contraseña.",
+      "reset_error_message": "No se ha podido restablecer la contraseña."
+    },
+    "activate": {
+      "seo_title": "Activar cuenta",
+      "seo_description": "Activa tu cuenta en Mi Aplicación.",
+      "title": "Activar cuenta",
+      "activate_button": "Activar cuenta",
+      "activation_error": "No se ha podido activar la cuenta. Por favor, asegúrate de que el código es correcto y vuelve a intentarlo."
+    },
+    "users": {
+      "seo_title": "Usuarios",
+      "seo_description": "Consulta la lista de usuarios en Mi Aplicación.",
+      "title": "Usuarios",
+      "description": "Aquí encontrarás la lista de todos los usuarios.",
+      "pagination_items": "usuarios",
+      "search_placeholder": "Buscar por nombre o apellido",
+      "add_user_button": "Agregar usuario",
+      "add_user_title": "Agregar nuevo usuario",
+      "add_user_description": "Introduce la información del nuevo usuario.",
+      "user_created_success": "Usuario creado",
+      "user_created_error": "Error al crear el usuario",
+      "user_email_conflict_error": "El email ya está en uso. Por favor, elige otro.",
+      "user": {
+        "seo_description": "Perfil de {name}",
+        "details_title": "Detalles del usuario",
+        "details_description": "Aquí puedes ver y editar la información del usuario.",
+        "user_update_success": "Usuario actualizado",
+        "user_update_error": "Error al actualizar el usuario",
+        "edit_user_title": "Editar perfil del usuario",
+        "edit_user_description": "Modifica la información del usuario.",
+        "edit_user_button": "Editar usuario",
+        "open_user_error": "No se ha podido abrir el perfil del usuario.",
+        "loading_user": "Cargando usuario",
+        "delete_user_title": "Eliminar usuario",
+        "delete_user_description": "Confirma que deseas eliminar este usuario.",
+        "user_delete_success": "Usuario eliminado",
+        "user_delete_error": "Error al eliminar el usuario"
+      }
+    },
+    "news": {
+      "seo_title": "Noticias",
+      "seo_description": "Consulta las noticias sobre Mi Aplicación.",
+      "title": "Noticias",
+      "featured_title": "Noticias destacadas",
+      "description": "Aquí encontrarás las últimas noticias y actualizaciones.",
+      "pagination_items": "noticias"
+    },
+    "dashboard_news": {
+      "seo_title": "Noticias",
+      "seo_description": "Consulta la lista de noticias en Mi Aplicación.",
+      "title": "Noticias",
+      "description": "Aquí encontrarás la lista de todas las noticias.",
+      "pagination_items": "noticias",
+      "search_placeholder": "Buscar por título",
+      "featured_column": "Destacada",
+      "add_news_button": "Agregar noticia",
+      "add_news_title": "Agregar nueva noticia",
+      "add_news_description": "Introduce la información de la nueva noticia.",
+      "news_created_success": "Noticia creada",
+      "news_created_error": "Error al crear la noticia",
+      "news_slug_conflict_error": "El slug ya está en uso. Por favor, elige otro.",
+      "new": {
+        "seo_description": "Detalles de {title}",
+        "details_title": "Detalles de la noticia",
+        "details_description": "Aquí puedes ver y editar la información de la noticia.",
+        "new_update_success": "Noticia actualizada",
+        "new_update_error": "Error al actualizar la noticia",
+        "edit_new_title": "Editar noticia",
+        "edit_new_description": "Modifica la información de la noticia.",
+        "edit_new_button": "Editar noticia",
+        "open_new_error": "No se ha podido abrir la noticia.",
+        "loading_new": "Cargando noticia",
+        "delete_new_title": "Eliminar noticia",
+        "delete_new_description": "Confirma que deseas eliminar esta noticia.",
+        "new_delete_success": "Noticia eliminada",
+        "new_delete_error": "Error al eliminar la noticia"
+      }
+    },
+    "dashboard_faqs": {
+      "seo_title": "Gestión de preguntas frecuentes",
+      "seo_description": "Gestiona las preguntas frecuentes de Mi Aplicación.",
+      "title": "Preguntas frecuentes",
+      "description": "Aquí encontrarás la lista de todas las preguntas frecuentes.",
+      "add_faq_button": "Agregar pregunta",
+      "add_faq_title": "Agregar nueva pregunta frecuente",
+      "add_faq_description": "Introduce la información de la nueva pregunta frecuente.",
+      "faq_created_success": "Pregunta frecuente creada",
+      "faq_created_error": "Error al crear la pregunta frecuente",
+      "faq": {
+        "seo_description": "Detalles de la pregunta frecuente {title}",
+        "faq_update_success": "Pregunta frecuente actualizada",
+        "faq_update_error": "Error al actualizar la pregunta frecuente",
+        "delete_faq_title": "Eliminar pregunta frecuente",
+        "delete_faq_description": "Confirma que deseas eliminar esta pregunta frecuente.",
+        "faq_delete_success": "Pregunta frecuente eliminada",
+        "faq_delete_error": "Error al eliminar la pregunta frecuente"
+      }
+    },
+    "faqs": {
+      "seo_title": "Preguntas frecuentes",
+      "seo_description": "Consulta las preguntas frecuentes sobre Mi Aplicación.",
+      "title": "Preguntas frecuentes",
+      "description": "Aquí encontrarás respuestas a las preguntas más comunes."
+    },
+    "dashboard_carousel": {
+      "seo_title": "Gestión del carrusel",
+      "seo_description": "Gestiona las diapositivas del carrusel de inicio de Mi Aplicación.",
+      "title": "Carrusel",
+      "description": "Aquí encontrarás la lista de todas las diapositivas del carrusel.",
+      "add_slide_button": "Agregar slide",
+      "add_slide_title": "Agregar nuevo slide",
+      "add_slide_description": "Introduce la información del nuevo slide.",
+      "slide_created_success": "Slide creado",
+      "slide_created_error": "Error al crear el slide",
+      "slide": {
+        "seo_description": "Detalles del slide {title}",
+        "add_cta_label": "Añadir botón de acción",
+        "slide_update_success": "Slide actualizado",
+        "slide_update_error": "Error al actualizar el slide",
+        "delete_slide_title": "Eliminar slide",
+        "delete_slide_description": "Confirma que deseas eliminar este slide.",
+        "slide_delete_success": "Slide eliminado",
+        "slide_delete_error": "Error al eliminar el slide"
+      }
+    },
+    "account": {
+      "seo_title": "Mi cuenta",
+      "seo_description": "Gestiona la configuración de tu cuenta en Mi Aplicación.",
+      "profile": {
+        "title": "Perfil",
+        "profile_update_success": "Perfil actualizado",
+        "profile_update_error": "Error al actualizar el perfil"
+      },
+      "password": {
+        "title": "Cambiar contraseña",
+        "current_password_label": "Contraseña actual",
+        "current_password_placeholder": "••••••••",
+        "new_password_label": "Nueva contraseña",
+        "new_password_placeholder": "••••••••",
+        "change_password_button": "Cambiar contraseña",
+        "password_update_success": "Contraseña cambiada",
+        "password_update_error": "Error al cambiar la contraseña"
+      }
+    }
+  },
+  "pagination": {
+    "first": "Primera",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "last": "Última",
+    "elements": "elementos",
+    "page": "Página",
+    "page_from": "Página {page} de {totalPages}",
+    "showing_items": "Mostrando {from} a {to} de {total} {elements}",
+    "items_per_page": "{items} por página"
+  },
+  "main": {
+    "welcome": "Bienvenido a nuestra aplicación",
+    "menu": "Menú",
+    "menu_description": "Navegación principal del sitio",
+    "select_language": "Selecciona tu idioma",
+    "loading": "Cargando",
+    "clear_button": "Limpiar",
+    "close": "Cerrar",
+    "actions": "Acciones",
+    "no_results": "No se han encontrado resultados",
+    "test_button": "Probar",
+    "search": "Buscar",
+    "search_placeholder": "Buscar",
+    "view_button": "Ver",
+    "edit_button": "Editar",
+    "delete_button": "Eliminar",
+    "save_button": "Guardar",
+    "cancel_button": "Cancelar",
+    "confirm_button": "Confirmar",
+    "image": "Imagen",
+    "name": "Nombre",
+    "name_placeholder": "Nombre",
+    "name_required": "El nombre es obligatorio",
+    "surname": "Apellido",
+    "surname_placeholder": "Apellido",
+    "surname_required": "El apellido es obligatorio",
+    "birthdate": "Fecha de nacimiento",
+    "birthdate_placeholder": "DD/MM/AAAA",
+    "gender": "Género",
+    "gender_placeholder": "Género",
+    "male": "Masculino",
+    "female": "Femenino",
+    "other": "Otro",
+    "role": "Rol",
+    "role_placeholder": "Rol",
+    "role_admin": "Administrador",
+    "role_user": "Usuario",
+    "password": "Contraseña",
+    "password_placeholder": "••••••••",
+    "new_password": "Nueva contraseña",
+    "confirm_password": "Confirmar contraseña",
+    "confirm_password_placeholder": "••••••••",
+    "confirm_password_required": "Por favor, confirma tu contraseña",
+    "password_length": "Entre {min} y {max} caracteres",
+    "password_uppercase": "Una letra mayúscula",
+    "password_lowercase": "Una letra minúscula",
+    "password_number": "Un número",
+    "password_special": "Un carácter especial",
+    "passwords_must_match": "Las contraseñas deben coincidir",
+    "not_valid_email": "Correo electrónico no válido",
+    "email": "Correo electrónico",
+    "email_placeholder": "tu correo electrónico",
+    "phone": "Teléfono",
+    "phone_placeholder": "Teléfono",
+    "number": "Número",
+    "yes": "Sí",
+    "no": "No",
+    "title": "Título",
+    "title_placeholder": "Título",
+    "title_required": "El título es obligatorio",
+    "slug": "Slug",
+    "slug_placeholder": "slug-url",
+    "slug_required": "El slug es obligatorio",
+    "slug_format_invalid": "El slug solo puede contener minúsculas, números y guiones",
+    "date": "Fecha",
+    "date_placeholder": "DD/MM/AAAA",
+    "date_required": "La fecha es obligatoria",
+    "featured": "Destacada",
+    "short_description": "Descripción corta",
+    "short_description_placeholder": "Descripción corta",
+    "short_description_required": "La descripción corta es obligatoria",
+    "description": "Descripción",
+    "description_placeholder": "Descripción",
+    "description_required": "La descripción es obligatoria",
+    "cta_label": "Texto del botón",
+    "cta_label_placeholder": "Texto del botón",
+    "cta_label_required": "El texto del botón es obligatorio",
+    "cta_link": "Enlace del botón",
+    "cta_link_placeholder": "https://ejemplo.com o /ruta",
+    "cta_link_required": "El enlace del botón es obligatorio",
+    "cta_target": "Abrir en",
+    "cta_target_self": "Misma pestaña",
+    "cta_target_blank": "Nueva pestaña",
+    "destination": "Destino",
+    "external": "Externo",
+    "internal": "Interno",
+    "previous_slide": "Diapositiva anterior",
+    "next_slide": "Siguiente diapositiva",
+    "go_to_slide": "Ir a la diapositiva {number}",
+    "start_date": "Fecha de inicio",
+    "start_date_placeholder": "Fecha de inicio",
+    "end_date": "Fecha de fin",
+    "end_date_placeholder": "Fecha de fin",
+    "featured_filter_all": "Todos",
+    "featured_filter_featured": "Destacados",
+    "featured_filter_not_featured": "No destacados",
+    "featured_filter_all_feminine": "Todas",
+    "featured_filter_featured_feminine": "Destacadas",
+    "featured_filter_not_featured_feminine": "No destacadas",
+    "rich_text_bold": "Negrita",
+    "rich_text_italic": "Cursiva",
+    "rich_text_strike": "Tachado",
+    "rich_text_underline": "Subrayado",
+    "rich_text_heading_2": "Encabezado 2",
+    "rich_text_heading_3": "Encabezado 3",
+    "rich_text_bullet_list": "Lista con viñetas",
+    "rich_text_ordered_list": "Lista numerada",
+    "rich_text_quote": "Cita",
+    "rich_text_align_left": "Alinear a la izquierda",
+    "rich_text_align_center": "Centrar",
+    "rich_text_align_right": "Alinear a la derecha",
+    "rich_text_align_justify": "Justificar",
+    "rich_text_link": "Enlace",
+    "rich_text_link_url_placeholder": "https://ejemplo.com",
+    "rich_text_link_remove": "Quitar enlace",
+    "rich_text_link_apply": "Aplicar",
+    "rich_text_undo": "Deshacer",
+    "rich_text_redo": "Rehacer",
+    "captcha_error_message": "¡Vaya! Los sentimos, no hemos podido comprobar que eres un humano. Por favor, recarga la página e inténtalo de nuevo. Si el error persiste inténtalo de nuevo pasado unos minutos.",
+    "switch_to_light_theme": "Cambiar a tema claro",
+    "switch_to_dark_theme": "Cambiar a tema oscuro"
+  },
+  "uploader": {
+    "upload_image": "Subir imagen",
+    "image_uploaded": "Imagen subida",
+    "remove_image": "Quitar imagen",
+    "max_file_info": "PNG, JPG hasta {maxSize}",
+    "file_upload_error": "Error al subir el archivo",
+    "invalid_file_type": "El archivo {fileName} no es un tipo de archivo aceptado.",
+    "file_too_large": "El archivo es demasiado grande. El tamaño máximo permitido es {maxSize}.",
+    "some_file_too_large": "Algunos archivos son demasiado grandes. El tamaño máximo permitido es {maxSize}.",
+    "max_files_info": "Puedes subir hasta {maxFiles} archivos.",
+    "max_files_exceeded": "Has superado el número máximo de archivos permitidos ({maxFiles}).",
+    "crop_image_title": "Ajustar imagen",
+    "crop_image_description": "Arrastra para mover la imagen y usa el control de zoom para ajustar el recorte antes de confirmar.",
+    "crop_zoom_label": "Zoom",
+    "crop_cancel": "Cancelar",
+    "crop_confirm": "Aplicar recorte"
+  }
+}
