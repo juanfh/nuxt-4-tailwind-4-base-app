@@ -1,7 +1,6 @@
 import sanitizeHtml from 'sanitize-html'
 
-// Port literal de src/utils/sanitizeHtml.ts (Next). Server-only (no
-// shared/): solo lo consume server/api/news/*.ts antes de persistir la
+// Server-only (no shared/): solo lo consume server/api/news/*.ts antes de persistir la
 // descripción rich text — no hay ninguna llamada desde el cliente que lo
 // necesite, así que no tiene sentido incluir `sanitize-html` en el bundle
 // del navegador. Acotado al set de etiquetas que genera

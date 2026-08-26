@@ -6,7 +6,7 @@ interface Props {
   faqs: Faq[]
 }
 
-// Port de src/components/project/faqs/FAQs.tsx (Next). Prefijado `Public*`
+// Prefijado `Public*`
 // (mismo motivo que PublicNews.vue): el dominio dashboard ya tiene un
 // componente de listado en app/components/domain/project/dashboard/faqs/
 // Faqs.vue — nombres de archivo distintos (`Faqs.vue` vs `FAQs.tsx` en Next,

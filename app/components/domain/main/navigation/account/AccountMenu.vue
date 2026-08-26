@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Port de AccountMenu.tsx (Next) — mismo patrón que MobileMenu.vue (Sheet +
-// SheetTrigger as-child + botón de cierre propio con show-close-button en
-// false). Solo se renderiza con sesión activa (ver LoginLogout.vue).
 import { UserIcon, XIcon } from '@lucide/vue'
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'

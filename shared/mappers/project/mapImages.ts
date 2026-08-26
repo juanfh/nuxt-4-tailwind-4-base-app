@@ -1,8 +1,7 @@
 import type { Image, ImageBase } from '#shared/types/image'
 
-// Port literal de src/mappers/project/mapImages.ts (Next) — misma ruta
-// anidada bajo project/ que en el proyecto de referencia, pese a que
-// mapUsers.ts (que depende de este mapper) vive en la raíz de mappers/.
+// Misma ruta anidada bajo project/, pese a que mapUsers.ts (que depende de
+// este mapper) vive en la raíz de mappers/.
 export const mapImageBase = (image: any): ImageBase => {
   return {
     width: image?.width ?? 0,

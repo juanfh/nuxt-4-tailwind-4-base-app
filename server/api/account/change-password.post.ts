@@ -6,13 +6,10 @@ interface ChangePasswordBody {
   newpassword: string
 }
 
-// Port de src/components/auth/password/actions.ts (Next, changePasswordAction).
-// Sin captcha (el original tampoco lo pide: es una acción autenticada, no un
-// formulario público). El token se resuelve server-side con
-// getServerSessionUser(event) — el cliente nunca lo envía, mismo criterio que
-// server/api/users/* (decisión 5 de .project_docs/routes.md), a diferencia
-// del original que recibe el token vía FormData desde el propio componente
-// cliente.
+// Sin captcha: es una acción autenticada, no un formulario público. El
+// token se resuelve server-side con getServerSessionUser(event) — el
+// cliente nunca lo envía, mismo criterio que server/api/users/* (decisión 5
+// de .project_docs/routes.md).
 //
 // ⚠️ Gotcha real: este endpoint NO puede vivir bajo `server/api/auth/**`
 // (aunque `server/services/auth/changePassword.ts`, el servicio que llama,

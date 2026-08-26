@@ -1,12 +1,11 @@
 // @vitest-environment nuxt
 //
-// Port de UserForm.test.ts (users), analog para news. FormAppDatePicker se
-// sustituye por un stub con un <input> nativo conectado al useField() real
-// (mismo motivo que en UserForm.test.ts: popovers de reka-ui poco amigables
-// con jsdom). FormAppRichTextEditor se sustituye igual, por el mismo motivo
-// pero con Tiptap/ProseMirror en vez de un Calendar — evita depender del
-// polyfill de Range/getBoundingClientRect que jsdom no trae, sin necesidad
-// de tocar test/setup.ts para este slice. Ver .project_docs/tests.md.
+// FormAppDatePicker se sustituye por un stub con un <input> nativo
+// conectado al useField() real (mismo motivo que en UserForm.test.ts:
+// popovers de reka-ui poco amigables con jsdom). FormAppRichTextEditor se
+// sustituye igual, por el mismo motivo pero con Tiptap/ProseMirror en vez de
+// un Calendar — evita depender del polyfill de Range/getBoundingClientRect
+// que jsdom no trae, sin necesidad de tocar test/setup.ts para este slice.
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

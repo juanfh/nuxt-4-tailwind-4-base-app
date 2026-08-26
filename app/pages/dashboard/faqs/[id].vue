@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Faq } from '#shared/types/project/faq'
 
-// Port de app/pages/dashboard/news/[id].vue (analog para faqs). `Faq.id` ya
+// `Faq.id` ya
 // es `string` (a diferencia de `New.id: number`) — sin necesidad de castear.
 definePageMeta({
   layout: 'dashboard',

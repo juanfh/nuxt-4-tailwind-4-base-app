@@ -9,7 +9,6 @@ export interface PatchDataProps {
   timeout?: number
 }
 
-// Port literal de src/services/main/patchData.ts (Next).
 export const patchData = async ({
   url,
   body,

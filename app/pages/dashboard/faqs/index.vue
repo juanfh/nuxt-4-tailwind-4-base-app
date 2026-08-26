@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Faq } from '#shared/types/project/faq'
 
-// Port de app/pages/dashboard/news/index.vue (analog para faqs). Sin query
+// Sin query
 // params (page/limit/sort/search): la API de faqs no pagina ni ordena — ver
 // server/services/project/faqs/getFaqs.ts.
 definePageMeta({

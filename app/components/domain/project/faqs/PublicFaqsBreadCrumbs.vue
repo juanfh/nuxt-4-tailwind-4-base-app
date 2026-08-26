@@ -3,7 +3,7 @@ import { ChevronRightIcon } from '@lucide/vue'
 import BreadCrumb from '@/components/domain/main/navigation/breadcrumbs/BreadCrumb.vue'
 import BreadCrumbs from '@/components/domain/main/navigation/breadcrumbs/BreadCrumbs.vue'
 
-// Port de src/components/project/faqs/FaqsBreadCrumbs.tsx (Next). Prefijado
+// Prefijado
 // `Public*` por el mismo motivo que PublicNewsBreadCrumbs.vue (colisión de
 // nombre con el análogo del dashboard, FaqsBreadCrumbs.vue — ver CLAUDE.md,
 // gotcha NUXT_B3011). Sin prop `link` (a diferencia de

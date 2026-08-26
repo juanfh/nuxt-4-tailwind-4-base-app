@@ -32,18 +32,17 @@ const [sortKeyFromParam, sortDirFromParam] = sortParam.value?.split('_') ?? [DEF
 
 const userToDelete = ref<User | null>(null)
 
-// Copia local reactiva de `users`, igual que `usersList`/`setUsersList` en
-// Users.tsx (Next): permite eliminar una fila al instante (DeleteUser splice
-// local) sin depender de que la página vuelva a pedir la lista a la API.
-// Se resincroniza cuando `users` cambia (nueva navegación con distinta
-// página/orden/búsqueda ⇒ nuevo useFetch en la página ⇒ nuevo array aquí).
+// Copia local reactiva de `users`: permite eliminar una fila al instante
+// (DeleteUser splice local) sin depender de que la página vuelva a pedir la
+// lista a la API. Se resincroniza cuando `users` cambia (nueva navegación
+// con distinta página/orden/búsqueda ⇒ nuevo useFetch en la página ⇒ nuevo
+// array aquí).
 const usersList = ref<User[]>(props.users)
 watch(() => props.users, (users) => { usersList.value = users })
 
 const usersStore = useUsersStore()
 onMounted(() => usersStore.clearUsersIds())
 
-// Port de src/components/project/dashboard/users/Users.tsx (Next), con
 // editInline fijado a "true" (ver decisión de alcance de la Fase 8): sin el
 // botón/acción "Ver" ni el flujo de EditUserForm en modal — Editar siempre
 // navega a la página de detalle. La búsqueda/orden/paginación se resuelven

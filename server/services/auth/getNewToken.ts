@@ -8,11 +8,8 @@ interface GetNewTokenProps {
   refreshToken: string
 }
 
-// Port literal de src/services/auth/getNewToken.ts (Next). GET
-// {API_URL}/auth/refresh?token=refreshToken — Nest valida únicamente el
-// `token` de query, la cabecera Authorization/x-token que se envía aquí es
-// ignorada por el backend (comportamiento confirmado en el proyecto Next,
-// ver .project_docs/auth.md de la referencia).
+// Nest valida únicamente el `token` de query — la cabecera
+// Authorization/x-token que se envía aquí es ignorada por el backend.
 export const getNewToken = async ({ token, refreshToken }: GetNewTokenProps): Promise<LoginUserMin | null> => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/refresh`)
 

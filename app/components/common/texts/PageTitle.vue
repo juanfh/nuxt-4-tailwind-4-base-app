@@ -16,10 +16,6 @@ const props = defineProps<Props>()
 
 const headingType = computed(() => props.type ?? 'h1')
 
-// Port de src/components/common/texts/Title.tsx (Next), que usa
-// `html-react-parser` para permitir HTML embebido en `title` — equivalente
-// nativo de Vue: `v-html`, sin librería adicional.
-//
 // ⚠️ Gotcha real (encontrado portando mi-cuenta/perfil+contraseña, no algo
 // introducido por esa tarea: afecta a todo uso previo de este componente en
 // el proyecto, incluidos users/news/faqs). El nombre original, `Title`,

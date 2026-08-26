@@ -5,8 +5,6 @@ interface RequestPasswordProps {
   email: string
 }
 
-// Port literal de src/services/auth/requestPassword.ts (Next). POST
-// {API_URL}/auth/forgot-password — solicita email de recuperación de contraseña.
 export const requestPassword = async ({ email }: RequestPasswordProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/forgot-password`)
 

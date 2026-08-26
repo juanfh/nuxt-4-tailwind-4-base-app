@@ -8,12 +8,11 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Port de src/components/auth/activate/ActivateForm.tsx (Next). Sin campos
-// de formulario propios (solo un botón de confirmación) — al éxito de
-// activateAccount() se autentica con el token devuelto vía
+// Sin campos de formulario propios (solo un botón de confirmación) — al
+// éxito de activateAccount() se autentica con el token devuelto vía
 // signIn("credentials", { token }) y se hace una navegación dura
-// (window.location.href) a home, igual que el original, para forzar la
-// recarga completa de la sesión.
+// (window.location.href) a home, para forzar la recarga completa de la
+// sesión.
 const { t } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()

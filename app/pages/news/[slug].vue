@@ -2,8 +2,7 @@
 import type { NewDetail } from '#shared/types/project/new'
 import { formatDate, FormatDate } from '#shared/utils/formatDate'
 
-// Port de src/app/[locale]/(project)/news/[slug]/page.tsx (Next), detalle
-// público por slug. Usa el nuevo endpoint /api/news/slug/:slug (getNewBySlug,
+// Usa el nuevo endpoint /api/news/slug/:slug (getNewBySlug,
 // distinto de /api/news/:id que usa el dashboard por id numérico — ver
 // server/services/project/news/getNewBySlug.ts). Sin JSON-LD (NewSchema/
 // mapSeo, no portados: este proyecto no tiene tipo/mapper SEO todavía, ver

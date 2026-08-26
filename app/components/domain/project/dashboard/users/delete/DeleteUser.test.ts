@@ -1,14 +1,12 @@
 // @vitest-environment nuxt
 //
-// Port de src/components/project/dashboard/users/delete/DeleteUser.test.tsx +
-// delete/actions.test.ts (Next) fusionados en un único archivo: en Nuxt no
-// existe la capa de Server Action separada — DeleteUser.vue llama directo a
-// $fetch('/api/users/[id]', {method:'DELETE'}) (ver decisión 48, CLAUDE.md),
-// así que el test de "acción" y el de componente son el mismo. Usa
-// mockNuxtImport/mockComponent de @nuxt/test-utils (equivalente de
-// vi.mock(...) para auto-imports de Nuxt, que no son imports explícitos en
-// el .vue y por tanto no se pueden vi.mock por ruta de módulo) — ver
-// .project_docs/tests.md.
+// En Nuxt no existe la capa de Server Action separada — DeleteUser.vue
+// llama directo a $fetch('/api/users/[id]', {method:'DELETE'}) (ver
+// decisión 48, CLAUDE.md), así que el test de "acción" y el de componente
+// son el mismo. Usa mockNuxtImport/mockComponent de @nuxt/test-utils
+// (equivalente de vi.mock(...) para auto-imports de Nuxt, que no son
+// imports explícitos en el .vue y por tanto no se pueden vi.mock por ruta
+// de módulo).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

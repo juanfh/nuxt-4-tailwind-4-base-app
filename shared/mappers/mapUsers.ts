@@ -1,8 +1,6 @@
 import type { UserMin, User } from '#shared/types/user'
 import { mapImage } from '#shared/mappers/project/mapImages'
 
-// Port literal de src/mappers/mapUsers.ts (Next) — vive en la raíz de
-// mappers/, no bajo project/, igual que en el proyecto de referencia.
 export const mapUserMin = (user: any): UserMin => {
   return {
     id: user?.id ?? '',

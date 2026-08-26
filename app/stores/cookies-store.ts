@@ -1,5 +1,4 @@
-// Port literal de src/stores/cookies-store.ts (Next, zustand persist +
-// partialize + onRehydrateStorage). watch=técnicas, waca=analíticas,
+// watch=técnicas, waca=analíticas,
 // wacf=funcionalidad/personalización, wacp=publicitarias.
 //
 // `pick` es el equivalente de `partialize`: solo watch/waca/wacf/wacp se

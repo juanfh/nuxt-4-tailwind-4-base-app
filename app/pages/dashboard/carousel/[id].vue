@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Slide } from '#shared/types/project/slide'
 
-// Port de app/pages/dashboard/faqs/[id].vue (analog para carousel/slides).
 // `Slide.id` ya es `string` (a diferencia de `New.id: number`) — sin
 // necesidad de castear.
 definePageMeta({

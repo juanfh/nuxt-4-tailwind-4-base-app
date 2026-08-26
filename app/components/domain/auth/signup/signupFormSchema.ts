@@ -3,7 +3,6 @@ import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@/components/domain/au
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/auth/signup/signupFormSchema.ts (Next).
 export const getSignupSchema = (tMain: TMain) => z.object({
   email: z.email({ message: tMain('main.not_valid_email') }),
   password: z

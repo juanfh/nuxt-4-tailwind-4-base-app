@@ -1,8 +1,7 @@
 // @vitest-environment nuxt
 //
-// Port de News.test.ts (news), analog para faqs — sin AppPagination ni
-// ordenación (la API de faqs no pagina/ordena, ver Faqs.vue). Ver
-// .project_docs/tests.md.
+// Sin AppPagination ni ordenación (la API de faqs no pagina/ordena, ver
+// Faqs.vue).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// Port de FooterMenu.tsx (Next), sin <CookiesConfigurator> (módulo de
-// cookies/CookiesConsent no portado todavía, ver CLAUDE.md "Decisiones
-// pendientes" — se añade cuando exista ese dominio).
+// Sin <CookiesConfigurator> (módulo de cookies/CookiesConsent no portado
+// todavía, ver CLAUDE.md "Decisiones pendientes" — se añade cuando exista
+// ese dominio).
 import type { NavItem } from '#shared/types/navigation'
 
 interface Props {

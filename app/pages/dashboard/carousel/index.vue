@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Slide } from '#shared/types/project/slide'
 
-// Port de app/pages/dashboard/faqs/index.vue (analog para carousel/slides).
 // Sin query params (page/limit/sort/search): la API de slides no pagina ni
 // ordena — ver server/services/project/slides/getSlides.ts.
 definePageMeta({

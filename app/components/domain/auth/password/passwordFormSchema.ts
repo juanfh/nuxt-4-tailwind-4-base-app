@@ -2,11 +2,6 @@ import { z } from 'zod'
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/auth/password/passwordFormSchema.ts (Next).
-// Las dos constantes ya se portaron en la Fase 8 (las necesitaba
-// userFormSchema.ts para el campo password del formulario de usuario);
-// `getPasswordSchema`/`PasswordFormValues` (el formulario de cambio de
-// contraseña de mi-cuenta) se añaden ahora junto con esa página.
 export const MIN_PASSWORD_LENGTH = 6
 export const MAX_PASSWORD_LENGTH = 12
 

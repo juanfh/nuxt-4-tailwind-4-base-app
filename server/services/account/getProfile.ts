@@ -6,11 +6,8 @@ interface GetProfileProps {
   token: string
 }
 
-// Port literal de src/services/account/getProfile.ts (Next). GET
-// {API_URL}/auth/profile — perfil del usuario autenticado (por token, sin
-// id explícito). `tags`/`nochache` se conservan por paridad de firma con el
-// original pero son inertes en Nitro salvo `nochache` (ver
-// .project_docs/api_client.md).
+// `tags`/`nochache` se conservan por paridad de firma con el original pero
+// son inertes en Nitro salvo `nochache` (ver .project_docs/api_client.md).
 export const getProfile = async ({ token }: GetProfileProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/profile`)
 

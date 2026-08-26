@@ -5,9 +5,6 @@ interface ActivateAccountProps {
   verify: string
 }
 
-// Port literal de src/services/auth/activateAccount.ts (Next). POST
-// {API_URL}/auth/activate-account — devuelve el token de sesión para el
-// login posterior por token.
 export const activateAccount = async ({ verify }: ActivateAccountProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/activate-account`)
 

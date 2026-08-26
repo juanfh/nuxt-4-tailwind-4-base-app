@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// Port de src/app/[locale]/(project)/dashboard/users/new/page.tsx (Next),
-// con EDIT_INLINE fijado a "true" (ver decisión de alcance de la Fase 8) —
+// Con EDIT_INLINE fijado a "true" (ver decisión de alcance de la Fase 8) —
 // sin el `redirect` que el original hace cuando EDIT_INLINE es "false".
 definePageMeta({
   layout: 'dashboard',

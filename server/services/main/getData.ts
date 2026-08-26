@@ -11,9 +11,8 @@ interface GetDataProps {
   timeout?: number
 }
 
-// Port de src/services/main/getData.ts (Next). `tags`/`revalidate` se
-// aceptan por paridad de firma con el original (next-intl domain services
-// futuros los pasarán) pero son inertes aquí: son la extensión
+// `tags`/`revalidate` se aceptan por paridad de firma con el original
+// (futuros servicios de dominio los pasarán) pero son inertes aquí: son la extensión
 // `next: { revalidate, tags }` del `fetch` de Next.js, sin equivalente en el
 // `fetch` de Nitro/undici. Si en el futuro hace falta cachear una llamada a
 // la API externa, se resuelve a nivel de `server/api/` con

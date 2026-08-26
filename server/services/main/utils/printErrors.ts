@@ -1,4 +1,3 @@
-// Port literal de src/services/main/utils/printErrors.ts (Next).
 export const throwResponseError = (message: string = 'Error') => {
   const error = new Error(message)
   Object.assign(error, { status: 404 })

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { New } from '#shared/types/project/new'
 
-// Port de src/app/[locale]/(project)/news/page.tsx (Next), listado público
+// Listado público
 // (sin sesión, sin filtros de búsqueda/destacada/fecha — a diferencia del
 // listado de dashboard, ver app/pages/dashboard/news/index.vue). Reusa el
 // mismo endpoint `/api/news` que ya consume el dashboard (server/api/news/

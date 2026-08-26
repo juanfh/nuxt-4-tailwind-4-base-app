@@ -3,11 +3,10 @@ interface CaptchaClient {
   execute: (siteKey: string, options: { action: string }) => Promise<string>
 }
 
-// Port de la mitad cliente de src/utils/captcha/captcha.ts (Next,
-// getCaptchaToken) — la mitad server-only (verifyCaptchaToken) vive en
-// server/utils/captcha.ts. `siteKey` se lee de runtimeConfig.public
-// (equivalente a NEXT_PUBLIC_CAPTCHA_SITE_KEY), no de process.env directo —
-// mismo criterio que persistedStoreKey.ts, ver .project_docs/state.md.
+// La mitad server-only (verifyCaptchaToken) vive en server/utils/captcha.ts.
+// `siteKey` se lee de runtimeConfig.public (equivalente a
+// NEXT_PUBLIC_CAPTCHA_SITE_KEY), no de process.env directo — mismo criterio
+// que persistedStoreKey.ts, ver .project_docs/state.md.
 export const getCaptchaToken = async (): Promise<string | null> => {
   const { public: { captchaSiteKey } } = useRuntimeConfig()
 

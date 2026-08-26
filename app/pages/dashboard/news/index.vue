@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { New } from '#shared/types/project/new'
 
-// Port de app/pages/dashboard/users/index.vue (analog para news). Igual que
-// esa página, pasa por server/api/news (Nitro) vía useFetch en vez de llamar
+// Pasa por server/api/news (Nitro) vía useFetch en vez de llamar
 // al servicio de dominio directo — ver CLAUDE.md, decisión 3.
 definePageMeta({
   layout: 'dashboard',

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// Port de AccountNavigationButton.tsx (Next). Idéntico a
-// MainNavigationButton.vue salvo el tamaño de texto (siempre "text-sm", sin
-// el "sm:text-sm" del menú principal) — mismo `useIsNavActive` compuesto.
+// Idéntico a MainNavigationButton.vue salvo el tamaño de texto (siempre
+// "text-sm", sin el "sm:text-sm" del menú principal) — mismo
+// `useIsNavActive` compuesto.
 import type { NavItem } from '#shared/types/navigation'
 
 interface Props {

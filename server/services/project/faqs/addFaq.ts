@@ -12,7 +12,6 @@ interface AddFaqProps {
   }
 }
 
-// Port literal de src/services/project/faqs/addFaq.ts (Next).
 export const addFaq = async ({ token, faq }: AddFaqProps): Promise<ServiceResult<Faq>> => {
   const baseUrl = new URL(`${process.env.API_URL}/faqs`)
 

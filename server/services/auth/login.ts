@@ -8,7 +8,6 @@ interface LoginProps {
   password: string
 }
 
-// Port literal de src/services/auth/login.ts (Next). POST {API_URL}/auth/login.
 export const login = async ({ user, password }: LoginProps): Promise<LoginUserMin | null> => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/login`)
 

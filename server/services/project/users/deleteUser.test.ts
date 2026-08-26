@@ -10,7 +10,6 @@ import { deleteUser } from './deleteUser'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/users/deleteUser.test.ts (Next).
 describe('deleteUser', () => {
   beforeEach(() => {
     vi.clearAllMocks()

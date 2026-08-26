@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Port de src/app/[locale]/(auth)/login/page.tsx (Next). El guard "redirige
+// El guard "redirige
 // a home si ya hay sesión" y el <Recaptcha/> del layout.tsx del grupo de
 // rutas (auth) se resuelven aquí vía middleware 'guest' + <Recaptcha/> en
 // cada una de las 4 páginas del dominio — ver app/middleware/guest.ts.

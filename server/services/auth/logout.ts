@@ -5,11 +5,9 @@ interface LogoutProps {
   accessToken: string
 }
 
-// Port literal de src/services/auth/logout.ts (Next), incluyendo el stub
-// temporal: el `return true` de la primera línea fuerza éxito sin llamar al
-// backend, dejando el resto de la función (ya implementada) como código
-// muerto. Documentado en el proyecto de referencia (.project_docs/auth.md)
-// como pendiente de retirar cuando se decida conectar el frontend — no se
+// El `return true` de la primera línea fuerza éxito sin llamar al backend,
+// dejando el resto de la función (ya implementada) como código muerto.
+// Pendiente de retirar cuando se decida conectar el frontend — no se
 // "arregla" aquí porque el pedido es replicar el comportamiento actual, no
 // adelantarse a esa decisión.
 export const logout = async ({ accessToken }: LogoutProps) => {

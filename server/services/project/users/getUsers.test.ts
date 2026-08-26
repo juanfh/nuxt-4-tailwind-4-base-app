@@ -12,8 +12,7 @@ import { mapUsers } from '#shared/mappers/project/mapUsers'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/users/getUsers.test.ts (Next), sin el mock de
-// react.cache (no aplica en Nitro, ver getUsers.ts).
+// Sin el mock de react.cache (no aplica en Nitro, ver getUsers.ts).
 describe('getUsers', () => {
   beforeEach(() => {
     vi.clearAllMocks()

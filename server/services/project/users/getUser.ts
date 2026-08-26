@@ -7,8 +7,7 @@ interface GetUserProps {
   token: string
 }
 
-// Port de src/services/project/users/getUser.ts (Next), sin el wrapper
-// `cache()` de React — ver nota en getUsers.ts.
+// Sin el wrapper `cache()` de React — ver nota en getUsers.ts.
 export const getUser = async ({ id, token }: GetUserProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/users/${id}`)
 

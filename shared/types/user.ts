@@ -1,6 +1,5 @@
 import type { Image } from '#shared/types/image'
 
-// Port literal de src/types/user.ts (Next).
 export interface UserMin {
   id: string
   name: string

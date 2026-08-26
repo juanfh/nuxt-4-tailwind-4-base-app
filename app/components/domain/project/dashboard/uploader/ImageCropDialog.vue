@@ -16,8 +16,7 @@ const emit = defineEmits<{ cancel: [], confirm: [pixelCrop: PixelCrop] }>()
 
 const { t } = useI18n()
 
-// Port de src/components/project/dashboard/uploader/ImageCropDialog.tsx
-// (Next), sobre `vue-advanced-cropper` en vez de `react-easy-crop` (sin
+// Sobre `vue-advanced-cropper`, en vez de `react-easy-crop` (sin
 // puerto Vue directo de esa librería) — misma UX (stencil circular/rectangular
 // + zoom), API distinta: el resultado no llega como estado controlado
 // (crop/zoom en el padre) sino vía el evento `change`, y el zoom es relativo

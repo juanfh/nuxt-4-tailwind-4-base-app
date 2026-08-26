@@ -4,8 +4,7 @@ import { stripHtml } from '#shared/utils/stripHtml'
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/project/dashboard/news/new/newFormSchema.ts
-// (Next). `tMain` recibe `useI18n().t` (no un traductor ya acotado al
+// `tMain` recibe `useI18n().t` (no un traductor ya acotado al
 // namespace `main`, ver la misma nota en userFormSchema.ts), así que cada
 // mensaje se referencia con el prefijo `main.` completo.
 export const getNewsSchema = (tMain: TMain) => z.object({

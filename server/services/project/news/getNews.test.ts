@@ -12,8 +12,7 @@ import { mapNews } from '#shared/mappers/project/mapNews'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/news/getNews.test.ts (Next), sin el mock de
-// react.cache — ver la misma nota en getUsers.test.ts.
+// Sin el mock de react.cache — ver la misma nota en getUsers.test.ts.
 describe('getNews', () => {
   beforeEach(() => {
     vi.clearAllMocks()

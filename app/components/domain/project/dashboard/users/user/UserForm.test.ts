@@ -1,14 +1,13 @@
 // @vitest-environment nuxt
 //
-// Port de src/components/project/dashboard/users/user/UserForm.test.tsx
-// (Next), adaptado a la firma sin onClose/onUserUpdate de UserForm.vue (con
+// Adaptado a la firma sin onClose/onUserUpdate de UserForm.vue (con
 // editInline="true" fijo siempre navega con router.back() al terminar, ver
 // decisión 45 CLAUDE.md). FormAppDatePicker/FormAppSelect se sustituyen por
 // stubs con un <input>/<select> nativo conectado al mismo useField() del
 // vee-validate real (en vez de mockear el value/handler a mano): permite
 // verificar el payload de submit real sin depender de los popovers de
 // reka-ui (Calendar/Select), poco amigables con jsdom y fuera de lo que este
-// test necesita cubrir. Ver .project_docs/tests.md.
+// test necesita cubrir.
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

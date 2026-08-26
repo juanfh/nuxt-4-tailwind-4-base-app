@@ -14,7 +14,6 @@ import { addFaq } from './addFaq'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/faqs/addFaq.test.ts (Next).
 describe('addFaq', () => {
   beforeEach(() => {
     vi.clearAllMocks()

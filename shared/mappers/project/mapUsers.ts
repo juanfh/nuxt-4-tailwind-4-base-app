@@ -1,11 +1,9 @@
 import type { User } from '#shared/types/project/user'
 import { mapImage } from '#shared/mappers/project/mapImages'
 
-// Port literal de src/mappers/project/mapUsers.ts (Next) — distinto de
-// shared/mappers/mapUsers.ts (raíz, produce el `User` mínimo de sesión).
-// Este vive bajo mappers/project/ igual que en el original, mapeando el
-// `User` completo del dominio project/dashboard/users (con birthdate/
-// gender/phone).
+// Distinto de shared/mappers/mapUsers.ts (raíz, produce el `User` mínimo de
+// sesión). Este vive bajo mappers/project/, mapeando el `User` completo del
+// dominio project/dashboard/users (con birthdate/gender/phone).
 export const mapUser = (user: any): User => {
   return {
     id: user?.id ?? '',

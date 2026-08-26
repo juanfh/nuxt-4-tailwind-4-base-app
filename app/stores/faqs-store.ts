@@ -1,4 +1,3 @@
-// Port literal de src/stores/faqs-store.ts (Next, zustand persist).
 export const useFaqsStore = defineStore('faqs', () => {
   const selectedFaqsIds = ref<string[]>([])
 

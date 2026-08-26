@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { User } from '#shared/types/project/user'
 
-// Port de src/app/[locale]/(project)/dashboard/users/page.tsx (Next), con
+// Con
 // EDIT_INLINE fijado a "true" (ver decisión de alcance de la Fase 8) — sin
-// el botón "Ver" ni el flujo de edición en modal. A diferencia del Server
-// Component original (que llama a getUsers() directo), esta página pasa por
+// el botón "Ver" ni el flujo de edición en modal. Esta página pasa por
 // server/api/users (Nitro) vía useFetch — ver CLAUDE.md, decisión 3.
 definePageMeta({
   layout: 'dashboard',

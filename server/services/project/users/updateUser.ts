@@ -19,7 +19,6 @@ interface UpdateUserProps {
   }
 }
 
-// Port literal de src/services/project/users/updateUser.ts (Next).
 export const updateUser = async ({ token, id, user }: UpdateUserProps): Promise<ServiceResult<Record<string, unknown>>> => {
   const baseUrl = new URL(`${process.env.API_URL}/users/${id}`)
 

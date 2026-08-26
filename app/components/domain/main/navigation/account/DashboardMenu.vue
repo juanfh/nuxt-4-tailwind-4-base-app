@@ -1,10 +1,10 @@
 <script setup lang="ts">
-// Port de DashboardMenu.tsx (Next), con una deviation deliberada:
+// Deviation deliberada:
 // - Sin "dashboard_products" (el dominio products no se porta, ni dashboard
 //   ni público): fuera de alcance. "dashboard_carousel" sí se incluye ahora
 //   (pendiente documentada en CLAUDE.md "Decisiones pendientes", resuelta en
-//   el port del dominio carousel/slides) en la misma posición que el
-//   original: justo después de "users", antes de "dashboard_news".
+//   el port del dominio carousel/slides), en la misma posición: justo
+//   después de "users", antes de "dashboard_news".
 // - No reusa useClientSessionUser() (snapshot no-reactivo tomado una sola
 //   vez en el setup() del componente, pensado para componentes de página que
 //   remontan en cada navegación — ver decisión 58). DashboardMenu vive

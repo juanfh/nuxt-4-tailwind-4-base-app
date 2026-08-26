@@ -3,7 +3,6 @@ import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@/components/domain/au
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/auth/reset/reset/resetFormSchema.ts (Next).
 export const getResetSchema = (tMain: TMain) => z.object({
   password: z
     .string()

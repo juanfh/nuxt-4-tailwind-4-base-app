@@ -7,8 +7,6 @@ interface ChangePasswordProps {
   newpassword: string
 }
 
-// Port literal de src/services/auth/changePassword.ts (Next). PATCH
-// {API_URL}/auth/password (autenticado) — cambio de contraseña estando logueado.
 export const changePassword = async ({ token, password, newpassword }: ChangePasswordProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/password`)
 

@@ -1,5 +1,4 @@
-// Port literal de src/stores/loading-store.ts (Next, zustand plano, sin
-// middleware/persistencia). Nombre del hook (useGlobalLoading, no
+// Nombre del hook (useGlobalLoading, no
 // useLoadingStore) preservado tal cual el original.
 export const useGlobalLoading = defineStore('loading', () => {
   const globalLoading = ref(false)

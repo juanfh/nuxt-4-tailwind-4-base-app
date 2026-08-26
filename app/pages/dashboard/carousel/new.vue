@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Port de app/pages/dashboard/faqs/new.vue (analog para carousel/slides).
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',

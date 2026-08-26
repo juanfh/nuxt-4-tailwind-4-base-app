@@ -5,11 +5,6 @@ import { Loader2Icon } from '@lucide/vue'
 import { AppToast } from '@/components/common/AppToast.vue'
 import { getLoginSchema, type LoginFormValues } from './loginFormSchema'
 
-// Port de src/components/auth/login/LoginForm.tsx (Next). El original
-// combina un server action (verifyRecaptchaAction, solo valida el captcha) +
-// useEffect que dispara signIn("credentials") en cliente — aquí se colapsa a
-// un único onSubmit async (idioma más simple de Nuxt, mismo patrón que
-// UserForm.vue/FaqForm.vue: $fetch + try/catch en vez de useActionState).
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { signIn } = useAuth()

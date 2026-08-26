@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NewDetail } from '#shared/types/project/new'
 
-// Port de app/pages/dashboard/users/[id].vue (analog para news). `New.id` es
+// `New.id` es
 // `number` (a diferencia de `User.id: string`) — el segmento de ruta llega
 // como string, se pasa tal cual en la URL del fetch (Nitro lo castea al
 // leerlo con getRouterParam) y se compara/usa como number donde haga falta.

@@ -18,7 +18,6 @@ interface AddUserProps {
   }
 }
 
-// Port literal de src/services/project/users/addUser.ts (Next).
 export const addUser = async ({ token, user }: AddUserProps): Promise<ServiceResult<Record<string, unknown>>> => {
   const baseUrl = new URL(`${process.env.API_URL}/users`)
 

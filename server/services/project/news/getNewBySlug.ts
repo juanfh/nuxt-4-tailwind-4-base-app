@@ -7,10 +7,9 @@ interface GetNewBySlugProps {
   token: string
 }
 
-// Port de src/services/project/news/getNew.ts (Next) — la variante pública
-// por slug, distinta de getNew.ts (variante dashboard, por id numérico vía
-// `/news/id/:id`, ver ese archivo). El endpoint externo aquí es
-// `/news/:slug` directo, sin prefijo `/id/`.
+// Variante pública por slug, distinta de getNew.ts (variante dashboard, por
+// id numérico vía `/news/id/:id`, ver ese archivo). El endpoint externo aquí
+// es `/news/:slug` directo, sin prefijo `/id/`.
 export const getNewBySlug = async ({ slug, token }: GetNewBySlugProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/news/${slug}`)
 

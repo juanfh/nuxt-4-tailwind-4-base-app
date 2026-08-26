@@ -14,11 +14,11 @@ import { login } from '../services/auth/login'
 import { getMe } from '../services/auth/getMe'
 import { loginByToken } from '../services/auth/loginByToken'
 
-// Port literal de src/app/[locale]/api/auth/authOptions.ts (Next), adaptado a
-// @sidebase/nuxt-auth (provider `authjs`, envuelve next-auth v4 tal cual —
-// `NuxtAuthHandler` acepta el mismo `AuthOptions` que `NextAuth()`). Vive en
-// server/utils/ (auto-importado, no escaneado como ruta) en vez de junto al
-// endpoint en server/api/auth/ — ver .project_docs/auth.md, gotcha de rutas.
+// Adaptado a @sidebase/nuxt-auth (provider `authjs`, envuelve next-auth v4
+// tal cual — `NuxtAuthHandler` acepta el mismo `AuthOptions` que
+// `NextAuth()`). Vive en server/utils/ (auto-importado, no escaneado como
+// ruta) en vez de junto al endpoint en server/api/auth/ — ver
+// .project_docs/auth.md, gotcha de rutas.
 //
 // A diferencia de Next, `NuxtAuthHandler` no cae automáticamente en
 // `process.env.NEXTAUTH_SECRET` si no se pasa `secret` explícito (lanza en
@@ -35,7 +35,6 @@ export const authOptions: AuthOptions = {
         token: { label: '', type: 'text' },
       },
       async authorize(credentials) {
-        /** Obtenemos el token "Inicial" */
         const loginData = credentials?.token === ''
           ? await login({
               user: credentials?.user as string,
@@ -47,7 +46,6 @@ export const authOptions: AuthOptions = {
 
         if (!loginData) return null
 
-        /** Retornamos estructura básica (sin permisos completos) */
         return {
           id: `${loginData?.user.id}`,
           name: loginData?.user.name,
@@ -64,7 +62,6 @@ export const authOptions: AuthOptions = {
     async jwt({ token, user, session, trigger }: { token: any, user: any, session?: any, trigger?: any }) {
       /** CASO 1: Primer inicio de sesión (user existe solo aquí) */
       if (user) {
-        /** Guardamos la estructura inicial */
         token.user = { ...user }
 
         /** El backend no emite un refresh token separado: la sesión con estado vive en un claim `sessionId`
@@ -102,11 +99,9 @@ export const authOptions: AuthOptions = {
         token.updatedManually = true
       }
 
-      /** CASO 3: Verificación de expiración */
       const nowTime = Math.floor(Date.now() / 1000)
       const bufferTime = 30 * 60
 
-      /** Si no tiene exp o aun es válido, retornamos */
       if (!token.exp || (token.exp as number) - nowTime > bufferTime) {
         return token
       }
@@ -143,12 +138,10 @@ export const authOptions: AuthOptions = {
      * Session Callback: Pasa los datos al cliente
      */
     async session({ session, token }: { session: any, token: any }) {
-      /** Si el token no tiene estructura válida, cortamos aquí. */
       if (!token || !token.user) {
         return null
       }
 
-      /** Si hay error en el refresco del token, cerramos la sesión */
       if (token.error === 'RefreshAccessTokenError') {
         return null
       }
@@ -160,12 +153,10 @@ export const authOptions: AuthOptions = {
         return session
       }
 
-      /** Manejo de fecha de expiración para la UI */
       if (token.exp) {
         const expirationDate = new Date(token.exp * 1000)
         session.expires = expirationDate.toISOString()
 
-        /** Validación de seguridad absoluta */
         if (Date.now() > expirationDate.getTime()) {
           return null
         }
@@ -191,7 +182,6 @@ export const authOptions: AuthOptions = {
           return null
         }
 
-        /** Fusionamos en memoria para el frontend */
         session.user = {
           ...session.user,
           ...userData.user,

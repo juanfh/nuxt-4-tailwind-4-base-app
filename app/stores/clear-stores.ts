@@ -1,4 +1,4 @@
-// Port literal de src/stores/clear-stores.ts (Next). El original accede al
+// El original accede al
 // store fuera de un componente vía `useUsersStore.getState()` (patrón
 // imperativo de zustand); el equivalente en Pinia es llamar directamente al
 // composable del store — devuelve la misma instancia singleton mientras haya

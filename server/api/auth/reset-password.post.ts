@@ -9,9 +9,6 @@ interface ResetPasswordBody {
   confirmPassword: string
 }
 
-// Port de src/components/auth/reset/reset/actions.ts (Next,
-// resetPasswordAction): captcha + aplicación de la nueva contraseña en un
-// único round-trip, igual que el original.
 export default defineEventHandler(async (event) => {
   const { recaptchaToken, verify, email, password, confirmPassword } = await readBody<ResetPasswordBody>(event)
 

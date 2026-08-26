@@ -1,10 +1,9 @@
 // @vitest-environment nuxt
 //
-// Port de NewForm.test.ts (news), analog para faqs. FormAppRichTextEditor se
-// sustituye por un stub con un <textarea> nativo conectado al useField()
-// real (mismo motivo que en NewForm.test.ts: evita depender del polyfill de
-// Range/getBoundingClientRect que jsdom no trae, sin tocar test/setup.ts).
-// Ver .project_docs/tests.md.
+// FormAppRichTextEditor se sustituye por un stub con un <textarea> nativo
+// conectado al useField() real (mismo motivo que en NewForm.test.ts: evita
+// depender del polyfill de Range/getBoundingClientRect que jsdom no trae,
+// sin tocar test/setup.ts).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

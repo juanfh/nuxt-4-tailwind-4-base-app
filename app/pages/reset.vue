@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Port de src/app/[locale]/(auth)/reset/page.tsx (Next). searchParams
+// searchParams
 // (`verify`/`email`) -> route.query: sin `verify` se muestra RequestForm
 // (solicitar el email de recuperación); con `verify` (y `email`, con el
 // mismo fallback literal "notUsed@strapi.io" del original) se muestra

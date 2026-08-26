@@ -1,6 +1,5 @@
 const DIACRITICS_REGEX = new RegExp('[\\u0300-\\u036f]', 'g')
 
-// Port literal de src/utils/slugify.ts (Next).
 export const SLUG_REGEX = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 export const slugify = (value: string) => {

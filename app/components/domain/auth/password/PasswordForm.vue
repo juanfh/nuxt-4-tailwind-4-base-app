@@ -5,14 +5,10 @@ import { Loader2Icon } from '@lucide/vue'
 import { AppToast } from '@/components/common/AppToast.vue'
 import { getPasswordSchema, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, type PasswordFormValues } from './passwordFormSchema'
 
-// Port de src/components/auth/password/PasswordForm.tsx (Next). $fetch +
-// try/catch en vez de useActionState, mismo patrón que
-// LoginForm.vue/SignupForm.vue/UserForm.vue. El endpoint
-// (server/api/account/change-password.post.ts, NO bajo server/api/auth/**
-// — ver el gotcha real documentado en ese archivo) resuelve el token de
-// sesión server-side (getServerSessionUser(event)) — a diferencia del
-// original, que lo envía vía FormData desde el propio componente cliente,
-// aquí el cliente nunca lo manda explícito (mismo criterio que
+// El endpoint (server/api/account/change-password.post.ts, NO bajo
+// server/api/auth/** — ver el gotcha real documentado en ese archivo)
+// resuelve el token de sesión server-side (getServerSessionUser(event)) —
+// el cliente nunca lo manda explícito (mismo criterio que
 // server/api/users/*, ver .project_docs/routes.md decisión 5).
 const { t } = useI18n()
 

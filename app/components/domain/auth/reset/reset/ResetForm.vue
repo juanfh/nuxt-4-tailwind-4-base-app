@@ -13,8 +13,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Port de src/components/auth/reset/reset/ResetForm.tsx (Next). $fetch +
-// try/catch en vez de useActionState, mismo patrón que UserForm.vue.
 const { t } = useI18n()
 
 const sent = ref(false)

@@ -9,7 +9,6 @@ export interface PostDataProps {
   timeout?: number
 }
 
-// Port literal de src/services/main/postData.ts (Next).
 export const postData = async ({
   url,
   body,

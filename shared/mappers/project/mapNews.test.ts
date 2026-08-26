@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mapNew, mapNewDetail, mapNews } from './mapNews'
 
-// Port de src/mappers/project/mapNews.test.ts (Next), sin el caso de `seo`
-// (no portado, ver shared/types/project/new.ts).
+// Sin el caso de `seo` (no portado, ver shared/types/project/new.ts).
 describe('mapNews', () => {
   it('coerces a string id to number', () => {
     const result = mapNew({ id: '42', title: 'Title', slug: 'title', date: '2026-01-01' })

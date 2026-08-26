@@ -1,6 +1,5 @@
-// Port literal de src/types/image.ts (Next). Dependencia de User (campo
-// `image`) — se porta en esta fase aunque el dominio "imágenes" en sí no lo
-// pida, igual que en Next.
+// Dependencia de User (campo `image`) — se porta en esta fase aunque el
+// dominio "imágenes" en sí no lo pida.
 export interface ImageBase {
   width: number
   height: number

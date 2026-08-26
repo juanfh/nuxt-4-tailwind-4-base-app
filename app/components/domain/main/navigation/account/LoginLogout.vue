@@ -1,10 +1,7 @@
 <script setup lang="ts">
-// Port de LoginLogout.tsx (Next). El original es un Server Component async
-// que resuelve la sesión una vez con checkHasSession() (Next dedupe/cachea
-// getServerSession() por render). Aquí no hay equivalente de Server
-// Component: este componente vive dentro del layout `default`, que persiste
-// entre navegaciones (ver app/layouts/default.vue) — necesita reaccionar a
-// un login/logout ocurridos sin recarga completa de página, así que lee
+// Este componente vive dentro del layout `default`, que persiste entre
+// navegaciones (ver app/layouts/default.vue) — necesita reaccionar a un
+// login/logout ocurridos sin recarga completa de página, así que lee
 // useAuth().data directo dentro de un computed(), no useClientSessionUser()
 // (snapshot no-reactivo, pensado para componentes de página que remontan en
 // cada navegación — ver decisión 58 en CLAUDE.md).

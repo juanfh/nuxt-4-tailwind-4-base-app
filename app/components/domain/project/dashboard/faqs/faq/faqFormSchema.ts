@@ -3,8 +3,7 @@ import { stripHtml } from '#shared/utils/stripHtml'
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/project/dashboard/faqs/faq/faqFormSchema.ts
-// (Next). `tMain` recibe `useI18n().t` (no un traductor ya acotado al
+// `tMain` recibe `useI18n().t` (no un traductor ya acotado al
 // namespace `main`, ver la misma nota en newFormSchema.ts), así que cada
 // mensaje se referencia con el prefijo `main.` completo.
 export const getFaqSchema = (tMain: TMain) => z.object({

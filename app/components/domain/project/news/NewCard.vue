@@ -14,7 +14,7 @@ const props = defineProps<Props>()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
-// Port de src/components/project/news/NewCard.tsx (Next). Sin el trío
+// Sin el trío
 // Figure/ImageLoader/NoImage (subsistema de imagen no portado, ver CLAUDE.md
 // decisión 46): mismo patrón `<img>` nativo con fallback en error que ya usa
 // Thumbnail.vue (dashboard/news), adaptado a la relación de aspecto 4/3 del

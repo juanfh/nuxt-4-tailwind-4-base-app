@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Port de src/app/[locale]/(auth)/signup/page.tsx (Next).
 definePageMeta({
   middleware: 'guest',
 })

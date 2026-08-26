@@ -1,8 +1,7 @@
 <script setup lang="ts">
-// Port literal de AccountNavigation.tsx (Next). A diferencia de
-// MainNavigation.vue, no filtra por `navItem.visible` (el original tampoco
-// lo hace) — los consumidores de este componente (AccountMenu/DashboardMenu)
-// ya construyen la lista final antes de pasarla.
+// A diferencia de MainNavigation.vue, no filtra por `navItem.visible` — los
+// consumidores de este componente (AccountMenu/DashboardMenu) ya construyen
+// la lista final antes de pasarla.
 import type { NavItem } from '#shared/types/navigation'
 
 interface Props {

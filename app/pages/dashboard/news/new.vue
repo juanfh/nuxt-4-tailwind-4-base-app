@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Port de app/pages/dashboard/users/new.vue (analog para news).
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',

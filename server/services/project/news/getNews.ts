@@ -15,8 +15,7 @@ interface GetNewsProps {
   token: string
 }
 
-// Port de src/services/project/news/getNews.ts (Next). Sin el wrapper
-// `cache()` de React — ver la misma nota en getUsers.ts.
+// Sin el wrapper `cache()` de React — ver la misma nota en getUsers.ts.
 export const getNews = async ({ search, featured, dateFrom, dateTo, page, limit, sort, token }: GetNewsProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/news`)
 

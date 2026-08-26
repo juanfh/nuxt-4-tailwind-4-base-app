@@ -1,12 +1,9 @@
-// Adaptación de src/hooks/useIsNavActive.ts (Next), no port literal: el
-// original concatena a mano el prefijo de locale (`${lang}${navItem.link}`)
-// porque next-intl no expone un helper de prefijado fuera de su propio
-// <Link>. Aquí `useLocalePath()` (@nuxtjs/i18n) ya resuelve exactamente ese
-// prefijado — mismo patrón que ya usa UsersBreadCrumbs.vue
+// `useLocalePath()` (@nuxtjs/i18n) ya resuelve el prefijo de locale en la
+// ruta — mismo patrón que ya usa UsersBreadCrumbs.vue
 // (`localePath(t('nav.home.link'))`) — así que se reutiliza en vez de
-// reimplementar la concatenación manual. `navItem.link`/`navItem.linkalt` ya
-// llegan como texto localizado (el propio nav.*.link del locale activo, ver
-// app/i18n/locales/*.json), igual que `tNav("home.link")` en el original.
+// reimplementar la concatenación manual. `navItem.link`/`navItem.linkalt`
+// ya llegan como texto localizado (el propio nav.*.link del locale activo,
+// ver app/i18n/locales/*.json).
 import type { NavItem } from '#shared/types/navigation'
 
 const cleanPath = (path: string) => (path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path)

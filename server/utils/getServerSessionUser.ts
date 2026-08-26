@@ -2,8 +2,8 @@ import type { H3Event } from 'h3'
 import { getServerSession } from '#auth'
 import type { ExtendedSession } from '#shared/types/session'
 
-// Port de src/utils/getServerSessionUser.ts (Next). Next dedupe `getServerSession`
-// dentro del mismo render con `cache()` de React (sin request/event explícito:
+// Next dedupe `getServerSession` dentro del mismo render con `cache()` de
+// React (sin request/event explícito:
 // lo resuelve internamente vía `next/headers`). Nitro no tiene un equivalente
 // implícito de request-scope, así que aquí se recibe `event: H3Event` explícito
 // y se memoiza en `event.context` — mismo objetivo (no resolver la sesión, y

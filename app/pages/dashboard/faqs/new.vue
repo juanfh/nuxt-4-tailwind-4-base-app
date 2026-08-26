@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// Port de app/pages/dashboard/news/new.vue (analog para faqs).
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
