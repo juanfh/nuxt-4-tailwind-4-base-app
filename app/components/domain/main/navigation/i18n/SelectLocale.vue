@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// `setLocale` de @nuxtjs/i18n ya resuelve la navegación a la ruta
-// localizada y actualiza `locale` de forma reactiva, así que no hace falta
-// estado `selected` propio: el `value` del select se liga directo a
-// `locale`.
 import { routingConfig } from '@/i18n/routing'
 import type { SelectOption } from '@/components/common/forms/AppSelect.vue'
 

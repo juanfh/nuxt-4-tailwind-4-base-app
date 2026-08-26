@@ -20,19 +20,12 @@ const localePath = useLocalePath()
 
 const slideToDelete = ref<Slide | null>(null)
 
-// Copia local reactiva de `slides`, mismo patrón que `faqsList` en Faqs.vue.
 const slidesList = ref<Slide[]>(props.slides)
 watch(() => props.slides, (slides) => { slidesList.value = slides })
 
 const slidesStore = useSlidesStore()
 onMounted(() => slidesStore.clearSlidesIds())
 
-// `Slide.id` ya es `string` (igual que `Faq.id`, a diferencia de
-// `New.id: number`) — sin necesidad del wrapper `NewsRow`/`numericId` que
-// usa News.vue.
-//
-// ⚠️ Mismo gotcha de FlexRender que en Users.vue/News.vue: los fallbacks de
-// columna deben devolver `undefined`, nunca `''`.
 const columns: ColumnDef<Slide>[] = [
   {
     accessorKey: 'image',

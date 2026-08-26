@@ -7,7 +7,6 @@ import { AppToast } from '@/components/common/AppToast.vue'
 import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@/components/domain/auth/password/passwordFormSchema'
 import { getSignupSchema, type SignupFormValues } from './signupFormSchema'
 
-// Sin captcha (a diferencia de login/reset) — deliberado, no un olvido.
 const { t } = useI18n()
 
 const isLoading = ref(false)

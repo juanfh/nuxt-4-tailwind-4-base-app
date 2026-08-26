@@ -24,9 +24,6 @@ const { t } = useI18n()
 
 const isLoading = ref(false)
 
-// `defaultImage` de ImageUploader usa la imagen original (`newsItem.image.url`),
-// no la miniatura, igual que `avatar` en UserForm.vue: es el punto de partida
-// del recorte, no un thumbnail ya recortado.
 const coverImage = computed(() => props.newsItem?.image?.url)
 
 const newsSchema = getNewsSchema(t)
@@ -50,10 +47,6 @@ const onImageFileChange = (file: ImageFileWithImageId | null) => {
   setFieldValue('imageId', file?.imageId)
 }
 
-// Segunda suscripción al campo "title" (el propio FormAppInputText ya llama
-// a useField internamente) para poder leer su valor en vivo aquí y generar
-// el slug — mismo truco que UserForm.vue usa para leer "password" en vivo
-// para los RuleCheck.
 const { value: titleValue } = useField<string>('title')
 
 const onSubmit = handleSubmit(async (data) => {
@@ -81,9 +74,6 @@ const onSubmit = handleSubmit(async (data) => {
 
     AppToast.success(t(props.mode === 'create' ? 'pages.dashboard_news.news_created_success' : 'pages.dashboard_news.new.new_update_success'))
 
-    // Con editInline siempre en "true" (ver decisión de alcance heredada de
-    // UserForm.vue) siempre se navega hacia atrás tras guardar, tanto en
-    // create como en edit.
     router.back()
   }
   catch (error) {

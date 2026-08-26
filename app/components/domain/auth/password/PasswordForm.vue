@@ -5,11 +5,6 @@ import { Loader2Icon } from '@lucide/vue'
 import { AppToast } from '@/components/common/AppToast.vue'
 import { getPasswordSchema, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH, type PasswordFormValues } from './passwordFormSchema'
 
-// El endpoint (server/api/account/change-password.post.ts, NO bajo
-// server/api/auth/** — ver el gotcha real documentado en ese archivo)
-// resuelve el token de sesión server-side (getServerSessionUser(event)) —
-// el cliente nunca lo manda explícito (mismo criterio que
-// server/api/users/*, ver .project_docs/routes.md decisión 5).
 const { t } = useI18n()
 
 const isLoading = ref(false)

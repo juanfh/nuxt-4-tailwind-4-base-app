@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { Profile } from '#shared/types/profile'
 
-// Pasa por server/api/account/profile (Nitro) vía useFetch, mismo criterio
-// que el resto de páginas del proyecto (CLAUDE.md, decisión 3).
-// `middleware: 'account'`: sesión sin restricción de rol, ver
-// app/middleware/account.ts.
 definePageMeta({
   middleware: 'account',
 })

@@ -27,10 +27,6 @@ const props = withDefaults(defineProps<Props>(), {
   placeholder: 'Selecciona una fecha',
 })
 
-// @nuxtjs/i18n expone el alias corto (es/en, ver routing.ts) como locale.value
-// — a diferencia de next-intl en el original, que exponía el locale completo
-// (es-ES/en-US) vía useLocale(). Se mapea directo sobre el alias corto en vez
-// de resolver localeProperties.iso, con el mismo resultado (solo hay 2 locales).
 const localeMap: Record<string, { locale: Locale, format: string, weekStartsOn: 0 | 1 }> = {
   es: { locale: es, format: 'dd/MM/yyyy', weekStartsOn: 1 },
   en: { locale: enUS, format: 'MM/dd/yyyy', weekStartsOn: 0 },
@@ -40,11 +36,6 @@ const dateFnsLocale = computed(() => localeMap[locale.value] ?? localeMap.es)
 
 const open = ref(false)
 
-// El Calendar de shadcn-vue (sobre reka-ui) trabaja con DateValue de
-// @internationalized/date, no con Date nativo — a diferencia del original
-// (react-day-picker + date-fns, ambos sobre Date). Se convierte en el borde
-// del componente para mantener la API pública (value/onChange) en Date, igual
-// que el original.
 const toCalendarDate = (date?: Date): CalendarDate | undefined => {
   if (!date) return undefined
   return new CalendarDate(date.getFullYear(), date.getMonth() + 1, date.getDate())

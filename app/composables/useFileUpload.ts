@@ -1,9 +1,3 @@
-// `formatBytes` (shared/utils/) llega auto-importado, sin sentencia import —
-// igual que `isAdminRole`/`getInitials` en el resto del proyecto. En vez de
-// `getInputProps()` (helper de React para esparcir props + ref sobre un
-// <input> nativo, sin equivalente idiomático en Vue), el propio componente
-// consumidor (ImageUploader.vue) enlaza `inputRef`/`accept`/`multiple`
-// directo en su `<template>` vía `ref`/`v-bind`.
 export interface FileMetadata {
   name: string
   size: number

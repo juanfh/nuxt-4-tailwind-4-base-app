@@ -12,7 +12,6 @@ import { mapFaqs } from '#shared/mappers/project/mapFaqs'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Sin el mock de react.cache — ver la misma nota en getUsers.test.ts.
 describe('getFaqs', () => {
   beforeEach(() => {
     vi.clearAllMocks()

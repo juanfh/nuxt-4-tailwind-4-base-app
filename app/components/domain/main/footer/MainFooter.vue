@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// navItems solo incluye "faqs" por ahora (petición explícita de esta
-// tarea) — "demo" no se porta: la página /demo no existe en este proyecto
-// (dominio demo no migrado, ver CLAUDE.md "Decisiones pendientes").
 import type { NavItem } from '#shared/types/navigation'
 
 const { t } = useI18n()

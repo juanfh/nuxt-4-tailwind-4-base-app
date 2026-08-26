@@ -8,8 +8,6 @@ interface GetNewTokenProps {
   refreshToken: string
 }
 
-// Nest valida únicamente el `token` de query — la cabecera
-// Authorization/x-token que se envía aquí es ignorada por el backend.
 export const getNewToken = async ({ token, refreshToken }: GetNewTokenProps): Promise<LoginUserMin | null> => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/refresh`)
 

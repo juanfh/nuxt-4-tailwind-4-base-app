@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { Faq } from '#shared/types/project/faq'
 
-// `Faq.id` ya
-// es `string` (a diferencia de `New.id: number`) — sin necesidad de castear.
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
@@ -11,8 +9,6 @@ definePageMeta({
 const { t } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
-// Ver el mismo gotcha en dashboard/faqs/index.vue: useRuntimeConfig() no
-// puede leerse dentro del getter perezoso de useSeoMeta.
 const { appName } = useRuntimeConfig().public
 
 const id = computed(() => String(route.params.id))

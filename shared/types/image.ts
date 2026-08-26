@@ -1,5 +1,3 @@
-// Dependencia de User (campo `image`) — se porta en esta fase aunque el
-// dominio "imágenes" en sí no lo pida.
 export interface ImageBase {
   width: number
   height: number

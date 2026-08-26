@@ -1,21 +1,16 @@
 import tailwindcss from '@tailwindcss/vite'
 import { routingConfig } from './app/i18n/routing'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  // 'vue-advanced-cropper/dist/style.css': estilos base del cropper usado por
-  // ImageCropDialog.vue (Fase 8, tarea pendiente resuelta) — sin este import
-  // global el stencil/las handles de recorte no tienen posicionamiento
-  // (position: absolute, etc.), ver .project_docs/components.md.
+  /* vue-advanced-cropper necesita este CSS global: sin él, el stencil y las handles de recorte de ImageCropDialog.vue pierden su posicionamiento. */
   css: ['~/assets/css/main.css', 'vue-advanced-cropper/dist/style.css'],
 
-  // Auto-import de componentes solo para domain/ y common/: las primitivas de
-  // ui/ siguen la convención shadcn de import explícito (import { Button }
-  // from '@/components/ui/button'), nunca <UiButton> global — y cada carpeta
-  // ui/* tiene un index.ts junto al .vue que, si Nuxt la escanea, colisiona
-  // en el mismo nombre de auto-import (warning NUXT_B3011). Ver design_system.md.
+  /* 
+  Solo domain/ y common/ tienen auto-import de componentes. ui/* se excluye porque cada carpeta ui/* tiene un index.ts junto al .vue que
+  colisiona con el mismo nombre de auto-import si Nuxt lo escanea (warning NUXT_B3011) — se importa siempre explícito. 
+  */
   components: [
     { path: '~/components/domain', pathPrefix: false },
     { path: '~/components/common', pathPrefix: false },
@@ -25,98 +20,59 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
 
-  // Expuesto al cliente (equivalente a NEXT_PUBLIC_APP_NAME en Next): a
-  // diferencia de Next, que inlinea cualquier env var con prefijo
-  // NEXT_PUBLIC_ al bundle en build-time, Nuxt no expone process.env al
-  // cliente automáticamente — hace falta runtimeConfig.public, poblado desde
-  // NUXT_PUBLIC_APP_NAME por convención de nombres de Nuxt. Usado por los
-  // stores persistidos (app/stores/*) para namespacing de la key de
-  // localStorage, ver .project_docs/state.md.
+  /* 
+  Poblado desde NUXT_PUBLIC_APP_NAME/NUXT_PUBLIC_CAPTCHA_SITE_KEY: Nuxt no expone process.env al cliente, así que cualquier valor que necesite
+  llegar al bundle de cliente (namespacing de localStorage en app/stores/*, site key de reCAPTCHA en Recaptcha.vue) debe pasar por
+  aquí. `CAPTCHA_SECRET_KEY` es server-only y se lee directo de process.env en server/utils/captcha.ts, nunca por aquí. 
+  */
   runtimeConfig: {
     public: {
       appName: '',
-      // Site key de reCAPTCHA v3, expuesto al cliente (Recaptcha.vue,
-      // app/utils/captcha.ts) — equivalente a NEXT_PUBLIC_CAPTCHA_SITE_KEY en
-      // next-16-tailwind-4-base-app, mismo criterio que appName (decisión 33
-      // de CLAUDE.md): runtimeConfig.public en vez de process.env directo,
-      // que Nuxt no expone al bundle de cliente. `CAPTCHA_SECRET_KEY` (server
-      // -only, verifyCaptchaToken en server/utils/captcha.ts) sí se lee
-      // directo de process.env, igual que API_URL — ver .env.example.
       captchaSiteKey: '',
     },
   },
 
   modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@sidebase/nuxt-auth', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt'],
 
-  // Equivalente a next-themes (ThemeProvider en src/app/[locale]/layout.tsx
-  // del proyecto Next): `preference` fijo a un valor concreto (nunca
-  // 'system', el default del propio módulo) replica `enableSystem={false}` —
-  // ThemeToggle.vue solo alterna claro/oscuro, sin una tercera opción "seguir
-  // al sistema". El valor por defecto (primera visita, sin nada en
-  // localStorage) replica `defaultTheme={NEXT_PUBLIC_DEFAULT_THEME ?? "dark"}`.
-  // classPrefix/classSuffix se dejan en su default ('' ambos): el módulo
-  // añade la clase exacta "dark"/"light" a <html>, que es lo que ya espera
-  // `@custom-variant dark (&:where(.dark, .dark *))` en main.css (preparado
-  // desde la Fase 2 a la espera de este theme switcher, ver CLAUDE.md).
-  // `storageKey` namespaced por app, igual que `storageKey={`${NEXT_PUBLIC_APP_NAME}-theme`}`
-  // del original — leído directo de process.env (evaluado en nuxt.config.ts,
-  // contexto Node, nunca bundleado al cliente), mismo criterio que API_URL
-  // (decisión 19 de CLAUDE.md), no vía runtimeConfig.public.
+  /* 
+  `preference` fijo (nunca 'system', el default del módulo): ThemeToggle.vue solo alterna claro/oscuro, sin una opción "seguir al sistema".
+  `storageKey` se lee directo de process.env (contexto Node de nuxt.config.ts, nunca bundleado al cliente) en vez de runtimeConfig.public. 
+  */
   colorMode: {
     preference: process.env.NUXT_PUBLIC_DEFAULT_THEME || 'dark',
     storageKey: `${process.env.NUXT_PUBLIC_APP_NAME}-theme`,
   },
 
-  // Storage global 'localStorage' (no 'cookies', el default del módulo) para
-  // que la persistencia de app/stores/* replique fielmente
-  // createJSONStorage(() => localStorage) de zustand en el proyecto Next.
-  // Ver .project_docs/state.md.
+  /* 'localStorage', no 'cookies' (default del módulo): los stores de app/stores/* esperan localStorage. */
   piniaPluginPersistedstate: {
     storage: 'localStorage',
   },
 
-  // Misma estrategia que next-intl (routing.ts + proxy.ts) en Next: locales
-  // completos (es-ES/en-US) como `iso` para <html lang> y SEO, alias cortos
-  // (es/en) como `code` — el `code` es lo que @nuxtjs/i18n usa como prefijo
-  // de URL, jugando el mismo rol que `routingConfig.aliases` en Next. La
-  // detección de idioma del navegador y el prefijo condicional los resuelve
-  // el propio módulo (equivalente a next-intl/middleware vía proxy.ts) — no
-  // hace falta un app/middleware/*.ts propio. Ver .project_docs/i18n.md.
+  /* `iso` es el locale completo (es-ES/en-US, para <html lang>); `code` es el alias corto (es/en) que @nuxtjs/i18n usa como prefijo de URL. */
   i18n: {
-    // @nuxtjs/i18n resuelve `restructureDir` siempre relativo a rootDir, no a
-    // srcDir (app/) — por defecto buscaría un `i18n/` en la raíz del repo,
-    // sibling a app/server/shared. Se apunta explícitamente a `app/i18n` para
-    // mantener la correspondencia de carpetas ya documentada en CLAUDE.md
-    // (app/i18n/ ← src/i18n/), en vez de crear una carpeta `i18n/` nueva en
-    // la raíz que rompería esa tabla.
+    /* 
+    Por defecto @nuxtjs/i18n resuelve `langDir` relativo a rootDir, no a srcDir (app/) — sin 
+    esto crearía un `i18n/` nuevo en la raíz del repo en vez de usar app/i18n/. 
+    */
     restructureDir: 'app/i18n',
     langDir: 'locales',
     defaultLocale: routingConfig.aliases[routingConfig.default],
-    strategy: 'prefix_except_default', // equivalente a localePrefix: 'as-needed' en Next
+    strategy: 'prefix_except_default',
     locales: routingConfig.locales.map(locale => ({
       code: routingConfig.aliases[locale],
       iso: locale,
       name: routingConfig.names[locale],
       file: `${routingConfig.aliases[locale]}.json`,
     })),
-    // ⚠️ Gotcha: por defecto `@nuxtjs/i18n` v10 resuelve rutas traducidas en
-    // modo `customRoutes: 'page'` — espera un macro `defineI18nRoute()`
-    // dentro de cada page.vue, e IGNORA por completo el bloque `pages` de
-    // aquí abajo (confirmado leyendo node_modules/@nuxtjs/i18n/dist/module.mjs,
-    // normalizeRouteMeta/getConfigValue: solo lee `options.pages` cuando
-    // `mode === "config"`). Sin este flag, `/panel/usuarios` daba
-    // VUE_ROUTER_R0004 (ninguna ruta registrada) mientras que la ruta cruda
-    // sin traducir (`/dashboard/users`) sí respondía — confirmado en el
-    // smoke test de la Fase 8. `customRoutes: 'config'` activa el modo que sí
-    // consulta este objeto, evitando repetir `defineI18nRoute()` en cada
-    // page.vue (mismo objetivo que `pathnames` centralizado en next-intl).
+    /* 
+    ⚠️ Gotcha: sin este flag, `@nuxtjs/i18n` v10 ignora por completo el bloque `pages` de aquí abajo (espera un macro `defineI18nRoute()` en
+    cada page.vue) y las rutas traducidas (`/panel/usuarios`) no se registran (VUE_ROUTER_R0004). 
+    */
     customRoutes: 'config',
-    // Primer contenido real del bloque `pages` (equivalente a `pathnames` de
-    // next-intl/routing.ts) — hasta la Fase 8 solo existía el placeholder
-    // `index.vue`. Los nombres de ruta (`dashboard-users`, `dashboard-users-new`,
-    // `dashboard-users-id`) los genera Nuxt a partir de app/pages/dashboard/users/
-    // {index,new,[id]}.vue; los valores coinciden literalmente con
-    // nav.users.link/nav.users.new.link de app/i18n/locales/*.json.
+    /* 
+    Las claves son nombres de ruta de Nuxt (derivados de la estructura de app/pages/**); los valores deben 
+    coincidir con nav.*.link de app/i18n/locales/*.json. 
+    */
     pages: {
       'dashboard-users': {
         es: '/panel/usuarios',
@@ -130,8 +86,6 @@ export default defineNuxtConfig({
         es: '/panel/usuarios/[id]',
         en: '/dashboard/users/[id]',
       },
-      // Port del dominio `news` (mismo patrón que dashboard-users-*): valores
-      // literales de nav.dashboard_news.link/nav.dashboard_news.new.link.
       'dashboard-news': {
         es: '/panel/noticias',
         en: '/dashboard/news',
@@ -144,8 +98,6 @@ export default defineNuxtConfig({
         es: '/panel/noticias/[id]',
         en: '/dashboard/news/[id]',
       },
-      // Port del dominio `faqs` (mismo patrón que dashboard-users-*/dashboard-news-*):
-      // valores literales de nav.dashboard_faqs.link/nav.dashboard_faqs.new.link.
       'dashboard-faqs': {
         es: '/panel/preguntas-frecuentes',
         en: '/dashboard/faqs',
@@ -158,9 +110,6 @@ export default defineNuxtConfig({
         es: '/panel/preguntas-frecuentes/[id]',
         en: '/dashboard/faqs/[id]',
       },
-      // Port del dominio `carousel`/`slides` (mismo patrón que
-      // dashboard-users-*/dashboard-news-*/dashboard-faqs-*): valores
-      // literales de nav.dashboard_carousel.link/nav.dashboard_carousel.new.link.
       'dashboard-carousel': {
         es: '/panel/carrusel',
         en: '/dashboard/carousel',
@@ -173,10 +122,6 @@ export default defineNuxtConfig({
         es: '/panel/carrusel/[id]',
         en: '/dashboard/carousel/[id]',
       },
-      // Primera pieza de la parte pública de `news` (listado + detalle):
-      // valores literales de nav.news.link (`app/pages/news/index.vue` →
-      // nombre de ruta `news`) y su sub-ruta de detalle por slug
-      // (`app/pages/news/[slug].vue` → nombre de ruta `news-slug`).
       news: {
         es: '/noticias',
         en: '/news',
@@ -185,15 +130,10 @@ export default defineNuxtConfig({
         es: '/noticias/[slug]',
         en: '/news/[slug]',
       },
-      // Parte pública de `faqs` (listado único, sin detalle por id/slug):
-      // valor literal de nav.faqs.link (`app/pages/faqs/index.vue` → nombre
-      // de ruta `faqs`).
       faqs: {
         es: '/preguntas-frecuentes',
         en: '/faqs',
       },
-      // Sección (auth) — login/signup/reset/activate: valores literales de
-      // nav.login.link/nav.signup.link/nav.reset.link/nav.activate.link.
       login: {
         es: '/iniciar-sesion',
         en: '/login',
@@ -210,8 +150,6 @@ export default defineNuxtConfig({
         es: '/activar-cuenta',
         en: '/activate-account',
       },
-      // Perfil/contraseña de mi-cuenta: valores literales de
-      // nav.account.link/nav.account.profile.link/nav.account.password.link.
       account: {
         es: '/mi-cuenta',
         en: '/my-account',
@@ -227,12 +165,10 @@ export default defineNuxtConfig({
     },
   },
 
-  // Provider `authjs`: @sidebase/nuxt-auth envuelve next-auth v4 (mismo
-  // paquete que usa el proyecto Next) en vez de usar su provider `local`
-  // (que implementaría cookies de sesión propias de Nitro) — requisito
-  // explícito de la Fase 5, ver .project_docs/auth.md. `authOptions` (el
-  // equivalente de src/app/[locale]/api/auth/authOptions.ts) vive en
-  // server/utils/authOptions.ts, registrado por server/api/auth/[...].ts.
+  /* 
+  Provider `authjs` (envuelve next-auth v4), no `local` (cookies de sesión propias de Nitro). 
+  `authOptions` vive en server/utils/authOptions.ts, registrado por server/api/auth/[...].ts. 
+  */
   auth: {
     baseURL: '/api/auth',
     provider: {

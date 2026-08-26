@@ -1,9 +1,4 @@
 // @vitest-environment nuxt
-//
-// FormAppRichTextEditor se sustituye por un stub con un <textarea> nativo
-// conectado al useField() real (mismo motivo que en NewForm.test.ts: evita
-// depender del polyfill de Range/getBoundingClientRect que jsdom no trae,
-// sin tocar test/setup.ts).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'
@@ -53,7 +48,7 @@ describe('FaqForm', () => {
 
   beforeEach(() => {
     vi.clearAllMocks()
-    mockBack = vi.spyOn(useRouter(), 'back').mockImplementation(() => {})
+    mockBack = vi.spyOn(useRouter(), 'back').mockImplementation(() => { })
   })
 
   it('renders create mode with empty required fields and no delete button', async () => {

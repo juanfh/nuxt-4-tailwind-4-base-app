@@ -6,8 +6,6 @@ const readNumberField = (formData: FormData, name: string): number | undefined =
   return typeof value === 'string' && value ? Number(value) : undefined
 }
 
-// `readFormData(event)` (h3) da directo un `FormData` nativo, sin necesidad
-// de reconstruirlo a mano a partir de `readMultipartFormData`.
 export default defineEventHandler(async (event) => {
   const formData = await readFormData(event)
 

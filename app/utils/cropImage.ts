@@ -1,6 +1,3 @@
-// Usa `window.Image` y `document.createElement('canvas')` (APIs de
-// navegador) → app/utils/, no shared/utils/ (criterio de la Fase 1, ver
-// CLAUDE.md).
 export interface PixelCrop {
   x: number
   y: number

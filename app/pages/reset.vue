@@ -1,9 +1,4 @@
-<script setup lang="ts">
-// searchParams
-// (`verify`/`email`) -> route.query: sin `verify` se muestra RequestForm
-// (solicitar el email de recuperación); con `verify` (y `email`, con el
-// mismo fallback literal "notUsed@strapi.io" del original) se muestra
-// ResetForm (aplicar la nueva contraseña).
+<script setup lang="ts"> 
 definePageMeta({
   middleware: 'guest',
 })

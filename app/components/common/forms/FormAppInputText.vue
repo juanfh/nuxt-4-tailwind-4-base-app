@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { useField } from 'vee-validate'
 
-// `control` (RHF) no tiene equivalente en VeeValidate: useField() recoge el
-// formulario ambiente vía provide/inject desde el useForm() del ancestro más
-// cercano, sin necesitar que se le pase explícito — se omite el prop control
-// en todos los FormApp*, ver .project_docs/components.md.
 interface Props {
   name: string
   label?: string

@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { User } from '#shared/types/project/user'
 
-// Con EDIT_INLINE fijado a "true": UserForm se renderiza directo en modo
-// "edit" (sin el UserFormContainer/EditUserForm que el original usa para el
-// modo "view" con dialog — fuera de alcance de esta fase, ver decisión de
-// alcance de la Fase 8). Pasa por server/api/users/[id] (Nitro) vía useFetch.
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
@@ -13,8 +9,6 @@ definePageMeta({
 const { t } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
-// Ver el mismo gotcha en dashboard/users/index.vue: useRuntimeConfig() no
-// puede leerse dentro del getter perezoso de useSeoMeta.
 const { appName } = useRuntimeConfig().public
 
 const id = computed(() => String(route.params.id))

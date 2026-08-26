@@ -5,8 +5,6 @@ definePageMeta({
 })
 
 const { t } = useI18n()
-// Ver el mismo gotcha en dashboard/faqs/index.vue: useRuntimeConfig() no
-// puede leerse dentro del getter perezoso de useSeoMeta.
 const { appName } = useRuntimeConfig().public
 
 useSeoMeta({

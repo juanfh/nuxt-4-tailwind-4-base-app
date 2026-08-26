@@ -1,7 +1,6 @@
 import { getNews } from '../../services/project/news/getNews'
 import { getServerSessionUser } from '../../utils/getServerSessionUser'
 
-// BFF hacia getNews() — ver la misma nota en server/api/users/index.get.ts.
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const { token } = await getServerSessionUser(event)

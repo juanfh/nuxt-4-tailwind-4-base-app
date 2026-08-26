@@ -1,13 +1,5 @@
 // @vitest-environment nuxt
-//
-// Adaptado a la firma sin onClose/onUserUpdate de UserForm.vue (con
-// editInline="true" fijo siempre navega con router.back() al terminar, ver
-// decisión 45 CLAUDE.md). FormAppDatePicker/FormAppSelect se sustituyen por
-// stubs con un <input>/<select> nativo conectado al mismo useField() del
-// vee-validate real (en vez de mockear el value/handler a mano): permite
-// verificar el payload de submit real sin depender de los popovers de
-// reka-ui (Calendar/Select), poco amigables con jsdom y fuera de lo que este
-// test necesita cubrir.
+
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'
@@ -82,7 +74,7 @@ describe('UserForm', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     sessionUser.role = 'admin'
-    mockBack = vi.spyOn(useRouter(), 'back').mockImplementation(() => {})
+    mockBack = vi.spyOn(useRouter(), 'back').mockImplementation(() => { })
   })
 
   it('renders create mode with empty required fields and no delete button', async () => {

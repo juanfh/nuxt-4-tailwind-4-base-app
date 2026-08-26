@@ -6,9 +6,6 @@ interface GetFaqsProps {
   token?: string
 }
 
-// Sin el wrapper `cache()` de React — ver la misma nota en getUsers.ts. Sin
-// query params (a diferencia de getUsers/getNews): la API de faqs no pagina
-// ni ordena.
 export const getFaqs = async ({ token }: GetFaqsProps = {}) => {
   const baseUrl = new URL(`${process.env.API_URL}/faqs`)
 

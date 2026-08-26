@@ -13,13 +13,6 @@ const props = defineProps<Props>()
 
 const { t } = useI18n()
 
-// Consume vía server/api/news/index.get.ts (Nitro) — server/services/** es
-// exclusivo del servidor (decisión 3 de CLAUDE.md), mismo patrón que
-// HomeHero.vue (server/api/slides) y app/pages/news/index.vue. Sin sesión:
-// el listado de noticias destacadas de la home es público.
-//
-// Sin CarouselPrevious/CarouselNext: mismo subconjunto que usa el original,
-// que tampoco los renderiza aquí.
 const { data } = await useFetch<{ data: New[], total: number }>('/api/news', {
   query: { featured: true, sort: 'date_desc', page: 1, limit: props.limit ?? 10 },
 })

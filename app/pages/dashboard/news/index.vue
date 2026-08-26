@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { New } from '#shared/types/project/new'
 
-// Pasa por server/api/news (Nitro) vía useFetch en vez de llamar
-// al servicio de dominio directo — ver CLAUDE.md, decisión 3.
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
@@ -10,8 +8,6 @@ definePageMeta({
 
 const { t } = useI18n()
 const route = useRoute()
-// `useRuntimeConfig()` debe leerse aquí, no dentro del getter perezoso de
-// useSeoMeta — mismo gotcha documentado en dashboard/users/index.vue.
 const { appName } = useRuntimeConfig().public
 
 const mainLimits = [5, 10, 20]

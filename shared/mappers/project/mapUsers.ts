@@ -1,9 +1,6 @@
 import type { User } from '#shared/types/project/user'
 import { mapImage } from '#shared/mappers/project/mapImages'
 
-// Distinto de shared/mappers/mapUsers.ts (raíz, produce el `User` mínimo de
-// sesión). Este vive bajo mappers/project/, mapeando el `User` completo del
-// dominio project/dashboard/users (con birthdate/gender/phone).
 export const mapUser = (user: any): User => {
   return {
     id: user?.id ?? '',

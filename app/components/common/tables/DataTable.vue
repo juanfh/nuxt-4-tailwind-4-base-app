@@ -33,10 +33,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { t } = useI18n()
 
-// Sin el sistema de columnas congeladas (ResizeObserver + offsets sticky
-// por columna): es puro pulido visual sobre el mismo TanStack Table, no
-// forma parte del CRUD que esta fase valida contra la API real — se puede
-// añadir más adelante si un dominio futuro lo necesita.
 const table = useVueTable({
   get data() { return props.data },
   get columns() { return props.columns },

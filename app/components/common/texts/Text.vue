@@ -13,8 +13,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Mismo patrón ya establecido en PageTitle.vue (sin el gotcha de `:is`
-// dinámico de ese componente: aquí no hay tag variable).
 const className = computed(() => cn(
   'ckcontent flex flex-col gap-4',
   props.color,

@@ -19,9 +19,6 @@ const router = useRouter()
 const open = ref(!props.isButton)
 const isLoading = ref(false)
 
-// Cliente llama directo a server/api/news/[id].delete.ts (Nitro), que
-// resuelve el token de sesión en el propio handler vía
-// getServerSessionUser(event).
 const onConfirmDeleteNews = async () => {
   isLoading.value = true
   try {

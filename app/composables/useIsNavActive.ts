@@ -1,9 +1,3 @@
-// `useLocalePath()` (@nuxtjs/i18n) ya resuelve el prefijo de locale en la
-// ruta — mismo patrón que ya usa UsersBreadCrumbs.vue
-// (`localePath(t('nav.home.link'))`) — así que se reutiliza en vez de
-// reimplementar la concatenación manual. `navItem.link`/`navItem.linkalt`
-// ya llegan como texto localizado (el propio nav.*.link del locale activo,
-// ver app/i18n/locales/*.json).
 import type { NavItem } from '#shared/types/navigation'
 
 const cleanPath = (path: string) => (path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path)

@@ -23,8 +23,6 @@ const { t } = useI18n()
 
 const isLoading = ref(false)
 
-// `defaultImage` de ImageUploader usa la imagen original (`slideItem.image.url`),
-// no la miniatura — mismo criterio que `coverImage` en NewForm.vue.
 const coverImage = computed(() => props.slideItem?.image?.url)
 
 const slideSchema = getSlideSchema(t)
@@ -58,9 +56,7 @@ const onSubmit = handleSubmit(async (data) => {
   if (data.imageId !== undefined) {
     body.imageId = data.imageId
   }
-  // `cta`: omitido (undefined) al crear sin CTA, `null` explícito al editar
-  // para vaciar un CTA existente — mismo matiz que el original (Next), ver
-  // server/services/project/slides/{addSlide,updateSlide}.ts.
+
   if (data.hasCta) {
     body.cta = { label: data.ctaLabel, link: data.ctaLink, target: data.ctaTarget }
   }
@@ -78,9 +74,6 @@ const onSubmit = handleSubmit(async (data) => {
 
     AppToast.success(t(props.mode === 'create' ? 'pages.dashboard_carousel.slide_created_success' : 'pages.dashboard_carousel.slide.slide_update_success'))
 
-    // Con editInline siempre en "true" (misma decisión de alcance heredada
-    // de UserForm.vue/NewForm.vue/FaqForm.vue) siempre se navega hacia atrás
-    // tras guardar, tanto en create como en edit.
     router.back()
   }
   catch {

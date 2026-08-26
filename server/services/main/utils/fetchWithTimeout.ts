@@ -1,4 +1,3 @@
-// Nitro usa el `fetch` global de undici, con el mismo soporte de AbortController.
 export const fetchWithTimeout = (
   url: string,
   options: RequestInit = {},

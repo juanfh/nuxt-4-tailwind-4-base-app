@@ -1,12 +1,4 @@
 // @vitest-environment nuxt
-//
-// En Nuxt no existe la capa de Server Action separada — DeleteUser.vue
-// llama directo a $fetch('/api/users/[id]', {method:'DELETE'}) (ver
-// decisión 48, CLAUDE.md), así que el test de "acción" y el de componente
-// son el mismo. Usa mockNuxtImport/mockComponent de @nuxt/test-utils
-// (equivalente de vi.mock(...) para auto-imports de Nuxt, que no son
-// imports explícitos en el .vue y por tanto no se pueden vi.mock por ruta
-// de módulo).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'
@@ -23,18 +15,6 @@ mockNuxtImport('useI18n', () => () => ({ t: (key: string) => key }))
 mockNuxtImport('useLocalePath', () => () => (path: string) => path)
 mockNuxtImport('$fetch', () => mockFetch)
 
-// ⚠️ Gotcha (Fase 9): `AppToast` (app/components/common/AppToast.vue) se usa
-// en el código de producción como identificador libre (`AppToast.success(...)`,
-// no como tag de plantilla) — en la app real, Nuxt lo resuelve porque el
-// propio módulo de componentes lo registra como global de `<script setup>`.
-// El entorno `nuxt` de @nuxt/test-utils NO replica esa parte del pipeline
-// (confirmado: sin este stub, el test falla con "ReferenceError: AppToast is
-// not defined" pese a que el resto de componentes sí resuelven bien) — y
-// `mockNuxtImport('AppToast', ...)` tampoco sirve aquí (falla con "Cannot
-// find import AppToast to mock": no está en el registro de auto-imports que
-// inspecciona). Fix: `vi.stubGlobal`, que sí resuelve identificadores libres
-// vía el objeto global (jsdom `window`), igual que `document`/`window`. Ver
-// .project_docs/tests.md.
 vi.stubGlobal('AppToast', { success: mockToastSuccess, error: mockToastError })
 
 mockComponent('AppAlertDialogContent', {

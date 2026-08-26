@@ -1,12 +1,4 @@
 <script setup lang="ts">
-// Pasa por el endpoint server/api/auth/logout.post.ts (ver ese archivo para
-// el porqué) vía $fetch en vez de llamar al servicio logout() directo.
-// `signOut({ redirect: false })` + navigateTo() en vez de
-// router.push()+router.refresh(): el layout `default` persiste entre
-// navegaciones (ver app/layouts/default.vue) y useAuth().data es un ref
-// reactivo compartido — no hace falta forzar un refresh de servidor para
-// que el resto del header (DashboardMenu/LoginLogout) refleje la sesión ya
-// cerrada.
 import { LogOutIcon } from '@lucide/vue'
 import { AlertDialog } from '@/components/ui/alert-dialog'
 import { AppToast } from '@/components/common/AppToast.vue'

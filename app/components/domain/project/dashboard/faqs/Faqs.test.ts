@@ -1,7 +1,4 @@
 // @vitest-environment nuxt
-//
-// Sin AppPagination ni ordenación (la API de faqs no pagina/ordena, ver
-// Faqs.vue).
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

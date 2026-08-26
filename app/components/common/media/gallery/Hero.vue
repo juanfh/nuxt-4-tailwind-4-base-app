@@ -4,12 +4,6 @@ import { cn } from '@/lib/utils'
 import Arrow from './components/Arrow.vue'
 import Dots from './components/Dots.vue'
 
-// Sin framer-motion (dependencia nueva sin equivalente ya instalado en este
-// proyecto): el cross-fade entre slides se resuelve con un <Transition> de
-// Vue (sin `mode`, así que enter/leave se solapan de forma nativa vía CSS,
-// dando el mismo efecto que `AnimatePresence` de framer-motion) y el
-// stagger de título/descripción/CTA con @keyframes CSS en vez de
-// motion.div con delays.
 interface Props {
   slides: Slide[]
   hideArrows?: boolean

@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// Sin SelectLocale/ThemeToggle en la franja inferior del panel (a diferencia
-// del original): ambos son piezas pendientes de esta fase (selector de
-// idioma y theme switcher, ver CLAUDE.md "Decisiones pendientes") — se
-// añaden cuando se porten.
 import { MenuIcon, XIcon } from '@lucide/vue'
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import type { NavItem } from '#shared/types/navigation'

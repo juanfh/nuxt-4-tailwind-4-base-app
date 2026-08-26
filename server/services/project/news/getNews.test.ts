@@ -12,7 +12,6 @@ import { mapNews } from '#shared/mappers/project/mapNews'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Sin el mock de react.cache — ver la misma nota en getUsers.test.ts.
 describe('getNews', () => {
   beforeEach(() => {
     vi.clearAllMocks()

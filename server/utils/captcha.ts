@@ -13,9 +13,6 @@ interface CaptchaFailure {
 
 type CaptchaData = CaptchaSuccess | CaptchaFailure
 
-// La mitad cliente (getCaptchaToken) vive en app/utils/captcha.ts, criterio
-// de split de la decisión 2 de CLAUDE.md (usa CAPTCHA_SECRET_KEY, no puede
-// bundlearse al cliente).
 export const verifyCaptchaToken = async (token: string): Promise<CaptchaData | null> => {
   const secretKey = process.env.CAPTCHA_SECRET_KEY
   if (!secretKey) {

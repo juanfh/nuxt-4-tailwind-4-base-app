@@ -14,12 +14,6 @@ const props = defineProps<Props>()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 
-// Sin el trío
-// Figure/ImageLoader/NoImage (subsistema de imagen no portado, ver CLAUDE.md
-// decisión 46): mismo patrón `<img>` nativo con fallback en error que ya usa
-// Thumbnail.vue (dashboard/news), adaptado a la relación de aspecto 4/3 del
-// original. Sin <Text> genérico (no portado): shortDescription se renderiza
-// como texto plano con line-clamp directo.
 const link = computed(() => localePath(`${t('nav.news.link')}/${props.newItem.slug}`))
 const date = computed(() => formatDate({ date: props.newItem.date, locale: locale.value, format: FormatDate.LONG }))
 

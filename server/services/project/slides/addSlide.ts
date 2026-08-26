@@ -15,9 +15,6 @@ interface AddSlideProps {
   }
 }
 
-// `cta` solo se incluye en el body si es distinto de `undefined` (permite un
-// `null` explícito, que el caller usa para vaciar un CTA existente en
-// edición — ver server/api/slides/[id].patch.ts).
 export const addSlide = async ({ token, slide }: AddSlideProps): Promise<ServiceResult<Slide>> => {
   const baseUrl = new URL(`${process.env.API_URL}/slides`)
 

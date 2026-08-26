@@ -24,8 +24,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Nota: el original (FormAppSelect.tsx) tampoco pasa fieldState.error a
-// AppSelect — AppSelect no muestra mensaje de error, se replica igual.
 const { value: fieldValue, handleChange } = useField<string>(() => props.name)
 </script>
 

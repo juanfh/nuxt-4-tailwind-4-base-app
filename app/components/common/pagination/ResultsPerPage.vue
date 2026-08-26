@@ -11,10 +11,6 @@ const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 
-// `newLimit === 1` (no `mainLimits[0]`) es un port literal de un aparente
-// residuo del original (ResultsPerPage.tsx, Next) — no se "arregla" aquí,
-// mismo criterio que otras inconsistencias heredadas ya documentadas
-// (ver .project_docs/i18n.md, nav.signup.link).
 const onChangeLimit = (value: string) => {
   const newLimit = Number(value)
   const query = { ...route.query }

@@ -12,7 +12,6 @@ interface SignupProps {
   phone?: string
 }
 
-// Usa patchData pese al nombre.
 export const signup = async ({
   email,
   password,

@@ -12,7 +12,6 @@ import { mapNewDetail } from '#shared/mappers/project/mapNews'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Variante dashboard por id numérico, ver getNew.ts.
 describe('getNew', () => {
   beforeEach(() => {
     vi.clearAllMocks()

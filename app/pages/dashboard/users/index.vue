@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { User } from '#shared/types/project/user'
 
-// Con
-// EDIT_INLINE fijado a "true" (ver decisión de alcance de la Fase 8) — sin
-// el botón "Ver" ni el flujo de edición en modal. Esta página pasa por
-// server/api/users (Nitro) vía useFetch — ver CLAUDE.md, decisión 3.
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
@@ -12,11 +8,6 @@ definePageMeta({
 
 const { t } = useI18n()
 const route = useRoute()
-// `useRuntimeConfig()` debe leerse aquí, no dentro del getter perezoso de
-// useSeoMeta: unhead resuelve esos getters durante el renderizado de <head>,
-// fuera del contexto de Nuxt activo — confirmado en el smoke test de esta
-// fase ("A composable that requires access to the Nuxt instance was called
-// outside of a plugin, Nuxt hook, Nuxt middleware, or Vue setup function").
 const { appName } = useRuntimeConfig().public
 
 const mainLimits = [5, 10, 20]

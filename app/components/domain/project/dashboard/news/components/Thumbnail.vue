@@ -10,9 +10,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Analogía rectangular de components/Avatar.vue (users): mismo patrón de
-// <img> nativo con fallback en error, pero sin equivalente de Initials (una
-// noticia no tiene "iniciales") — el fallback es un icono genérico.
 const failed = ref(false)
 watch(() => props.image, () => { failed.value = false })
 </script>

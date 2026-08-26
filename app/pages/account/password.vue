@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Sin fetch de datos: PasswordForm resuelve el token de sesión
-// server-side. `middleware: 'account'` — mismo guard que profile.vue, ver
-// app/middleware/account.ts.
 definePageMeta({
   middleware: 'account',
 })

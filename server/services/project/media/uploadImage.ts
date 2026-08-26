@@ -14,10 +14,6 @@ interface UploadImageProps {
   smallSize?: ImageSize
 }
 
-// La petición a `${API_URL}/media/upload` va con un `FormData` multipart,
-// no JSON — no reusa `postData` (fuerza `Content-Type: application/json` +
-// `JSON.stringify(body)`), hace el fetch directo. Devuelve `ServiceResult`,
-// mismo patrón que `addUser`/`updateUser` (es una mutación, no una lectura).
 export const uploadImage = async ({ token, file, folder, thumbnailSize, smallSize }: UploadImageProps): Promise<ServiceResult<{ id: number }>> => {
   const baseUrl = new URL(`${process.env.API_URL}/media/upload`)
 

@@ -11,10 +11,6 @@ interface GetUsersProps {
   token: string
 }
 
-// Sin el wrapper `cache()` de React: esa memoización evitaba repetir la
-// llamada a la API externa si varios Server Components pedían los mismos
-// datos dentro del mismo render — en Nitro cada handler de server/api/ se
-// invoca una única vez por request, no hace falta el equivalente.
 export const getUsers = async ({ search, page, limit, sort, token }: GetUsersProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/users`)
 

@@ -2,17 +2,6 @@ import type { Locale } from 'date-fns'
 import { format as formatWithDateFns } from 'date-fns'
 import { es, enUS } from 'date-fns/locale'
 
-// Adaptación (no port literal) de src/utils/formatDate.ts (Next), que usa
-// Luxon. Este proyecto ya trae `date-fns` como dependencia (Fase 7,
-// AppDatePicker) — añadir Luxon solo para esta función habría duplicado
-// una librería de fechas sin necesidad real. Los patrones de formato
-// (tokens CLDR-like) coinciden entre Luxon y date-fns para los casos usados
-// aquí, así que se preservan literales. `formatNow`/`formatFromUTCDate` no se
-// portan (sin consumidor todavía) — `toISODateTime`/`toISODateTimeEndOfDay`
-// sí, añadidos en el port del dominio `news` (getNews.ts/addNew.ts,
-// filtro de rango de fechas), también adaptados a Date nativo en vez de
-// Luxon: reciben un string 'yyyy-MM-dd' (el que produce FormAppDatePicker,
-// ver AppDatePicker.vue) y fijan la hora a inicio/fin de día en UTC.
 export enum FormatDate {
   HOUR = 'hour',
   BASIC = 'basic',
@@ -22,9 +11,6 @@ export enum FormatDate {
   UTC_Z = 'utc_z',
 }
 
-// Claves por alias corto (es/en), no ISO completo (es-ES/en-US): mismo
-// criterio que `localeMap` en AppDatePicker.vue, porque @nuxtjs/i18n expone
-// el alias corto vía `locale.value`, no el ISO completo que usaba next-intl.
 const localeMap: Record<string, Record<FormatDate, string>> = {
   es: {
     [FormatDate.HOUR]: 'HH:mm',

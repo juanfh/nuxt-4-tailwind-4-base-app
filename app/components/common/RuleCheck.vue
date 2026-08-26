@@ -8,8 +8,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Sin debounce ni animación real detrás, así que aquí un computed es
-// equivalente.
 const active = computed(() => props.success ?? false)
 </script>
 

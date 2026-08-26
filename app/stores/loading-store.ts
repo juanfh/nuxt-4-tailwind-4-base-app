@@ -1,5 +1,3 @@
-// Nombre del hook (useGlobalLoading, no
-// useLoadingStore) preservado tal cual el original.
 export const useGlobalLoading = defineStore('loading', () => {
   const globalLoading = ref(false)
   const globalLoadingMessage = ref<string | null>(null)

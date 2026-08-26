@@ -8,11 +8,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Sin campos de formulario propios (solo un botón de confirmación) — al
-// éxito de activateAccount() se autentica con el token devuelto vía
-// signIn("credentials", { token }) y se hace una navegación dura
-// (window.location.href) a home, para forzar la recarga completa de la
-// sesión.
 const { t } = useI18n()
 const localePath = useLocalePath()
 const router = useRouter()

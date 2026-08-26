@@ -14,9 +14,6 @@ const router = useRouter()
 
 const search = computed(() => (typeof route.query.search === 'string' ? route.query.search : ''))
 
-// `useForm()` sin schema, solo para dar contexto ambiente a FormAppInputText
-// (useField) — port de SearchFilter.tsx (Next), que también usa
-// `useForm()` de react-hook-form sin resolver por el mismo motivo.
 useForm({ initialValues: { search: search.value } })
 const { value: searchValue } = useField<string>('search')
 

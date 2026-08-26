@@ -38,9 +38,6 @@ const pendingCrop = ref<PendingCrop | null>(null)
 const confirmed = ref<ConfirmedImage | null>(null)
 const isUploading = ref(false)
 
-// Sin `startTransition` (concepto React sin equivalente Vue) ni
-// `onFileChange` como emit (prop-función, misma convención que los App*.vue
-// de common/forms/ — ver CLAUDE.md decisión 38).
 const { isDragging, errors, inputRef, handleDragEnter, handleDragLeave, handleDragOver, handleDrop, handleFileChange, openFileDialog } = useFileUpload({
   maxFiles: 1,
   maxSize: props.maxSize,
