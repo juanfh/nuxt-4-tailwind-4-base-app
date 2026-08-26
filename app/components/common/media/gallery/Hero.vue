@@ -65,7 +65,7 @@ const currentSlide = computed(() => props.slides[current.value])
           :alt="currentSlide.data?.title ?? `Slide ${current + 1}`"
           class="absolute inset-0 w-full h-full object-cover"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
         <div v-if="currentSlide.data" class="absolute inset-0 flex flex-col gap-2 items-center justify-center px-16 text-center">
           <PageTitle
             v-if="currentSlide.data.title"
