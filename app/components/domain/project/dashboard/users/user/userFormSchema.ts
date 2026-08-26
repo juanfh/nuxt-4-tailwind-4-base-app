@@ -3,9 +3,6 @@ import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@/components/domain/au
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/project/dashboard/users/user/userFormSchema.ts
-// (Next). `tMain` recibe `useI18n().t` en vez de `useTranslations("main")` de
-// next-intl — misma firma `(key, params) => string`.
 export const getProjectUserSchema = (tMain: TMain, mode: 'view' | 'edit' | 'create' = 'edit') => z.object({
   name: z.string().min(1, { message: tMain('main.name_required') }),
   surname: z.string().min(1, { message: tMain('main.surname_required') }),

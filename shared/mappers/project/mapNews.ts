@@ -1,8 +1,6 @@
 import type { New, NewDetail } from '#shared/types/project/new'
 import { mapImage } from '#shared/mappers/project/mapImages'
 
-// Port de src/mappers/project/mapNews.ts (Next), sin `mapSEO` (ver
-// shared/types/project/new.ts).
 export const mapNew = (newItem: any): New => ({
   id: Number(newItem?.id ?? 0),
   title: newItem?.title ?? '',

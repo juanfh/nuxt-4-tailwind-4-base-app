@@ -6,10 +6,6 @@ interface GetSlidesProps {
   token?: string
 }
 
-// Port de src/services/project/home/getSlides.ts (Next), sin el wrapper
-// `cache()` de React — ver la misma nota en getFaqs.ts. Sin query params
-// (a diferencia de getUsers/getNews): la API de slides no pagina ni ordena,
-// igual que faqs.
 export const getSlides = async ({ token }: GetSlidesProps = {}) => {
   const baseUrl = new URL(`${process.env.API_URL}/slides`)
 

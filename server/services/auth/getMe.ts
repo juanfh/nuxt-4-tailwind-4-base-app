@@ -7,8 +7,6 @@ interface GetMeProps {
   token: string
 }
 
-// Port literal de src/services/auth/getMe.ts (Next). GET {API_URL}/auth/me,
-// JWT únicamente vía cabecera (Authorization/x-token, sin query string).
 export const getMe = async ({ token }: GetMeProps): Promise<LoginUser | null> => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/me`)
 

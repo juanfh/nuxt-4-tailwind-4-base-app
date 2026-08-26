@@ -19,9 +19,6 @@ const router = useRouter()
 const open = ref(!props.isButton)
 const isLoading = ref(false)
 
-// Port de DeleteFaq.vue, analog para slides: cliente llama directo a
-// server/api/slides/[id].delete.ts (Nitro), que resuelve el token de sesión
-// en el propio handler vía getServerSessionUser(event).
 const onConfirmDeleteSlide = async () => {
   isLoading.value = true
   try {

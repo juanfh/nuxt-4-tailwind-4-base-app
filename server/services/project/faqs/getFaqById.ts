@@ -7,7 +7,6 @@ interface GetFaqByIdProps {
   token: string
 }
 
-// Port literal de src/services/project/faqs/getFaqById.ts (Next).
 export const getFaqById = async ({ id, token }: GetFaqByIdProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/faqs/${id}`)
 

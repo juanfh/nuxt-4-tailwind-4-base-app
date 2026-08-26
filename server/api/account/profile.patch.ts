@@ -11,8 +11,6 @@ interface UpdateProfileBody {
   imageId?: number
 }
 
-// BFF hacia updateProfile() — sin id: actualiza el perfil del usuario
-// resuelto por el token de sesión.
 export default defineEventHandler(async (event) => {
   const body = await readBody<UpdateProfileBody>(event)
   const { token } = await getServerSessionUser(event)

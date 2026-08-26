@@ -19,9 +19,6 @@ const router = useRouter()
 const open = ref(!props.isButton)
 const isLoading = ref(false)
 
-// Port de DeleteNew.vue (news), analog para faqs: cliente llama directo a
-// server/api/faqs/[id].delete.ts (Nitro), que resuelve el token de sesión en
-// el propio handler vía getServerSessionUser(event).
 const onConfirmDeleteFaq = async () => {
   isLoading.value = true
   try {

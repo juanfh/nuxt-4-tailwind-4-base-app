@@ -6,9 +6,6 @@ interface RequestPasswordBody {
   email: string
 }
 
-// Port de src/components/auth/reset/request/actions.ts (Next,
-// requestPasswordAction): captcha + solicitud del email de recuperación en
-// un único round-trip, igual que el original.
 export default defineEventHandler(async (event) => {
   const { recaptchaToken, email } = await readBody<RequestPasswordBody>(event)
 

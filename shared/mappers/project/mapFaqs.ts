@@ -1,6 +1,5 @@
 import type { Faq } from '#shared/types/project/faq'
 
-// Port literal de src/mappers/project/mapFaqs.ts (Next).
 export const mapFaq = (faq: any): Faq => ({
   id: faq?.id ?? '',
   title: faq?.title ?? '',

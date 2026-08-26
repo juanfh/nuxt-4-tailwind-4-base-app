@@ -7,8 +7,6 @@ interface LoginByTokenProps {
   token: string
 }
 
-// Port literal de src/services/auth/loginByToken.ts (Next). GET
-// {API_URL}/auth/login-token?token=. Usado tras activar cuenta.
 export const loginByToken = async ({ token }: LoginByTokenProps): Promise<LoginUserMin | null> => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/login-token`)
 

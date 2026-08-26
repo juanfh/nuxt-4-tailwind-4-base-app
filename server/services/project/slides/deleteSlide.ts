@@ -6,7 +6,6 @@ interface DeleteSlideProps {
   id: string
 }
 
-// Port literal de src/services/project/home/deleteSlide.ts (Next).
 export const deleteSlide = async ({ token, id }: DeleteSlideProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/slides/${id}`)
 

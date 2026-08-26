@@ -13,17 +13,6 @@ const props = defineProps<Props>()
 
 const { t } = useI18n()
 
-// Port de src/components/project/news/NewsCards.tsx (Next). A diferencia
-// del original (server component que llama a getNews() directo), consume
-// vía server/api/news/index.get.ts (Nitro) — server/services/** es
-// exclusivo del servidor (decisión 3 de CLAUDE.md), mismo patrón que
-// HomeHero.vue (server/api/slides) y app/pages/news/index.vue. Sin sesión:
-// el listado de noticias destacadas de la home es público.
-//
-// Carousel/CarouselContent/CarouselItem: primitiva ui/carousel portada esta
-// tarea (base embla-carousel-vue, vía shadcn-vue add carousel — ver
-// .project_docs/design_system.md), sin CarouselPrevious/CarouselNext:
-// mismo subconjunto que usa el original, que tampoco los renderiza aquí.
 const { data } = await useFetch<{ data: New[], total: number }>('/api/news', {
   query: { featured: true, sort: 'date_desc', page: 1, limit: props.limit ?? 10 },
 })

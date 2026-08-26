@@ -1,4 +1,3 @@
-// Port literal de src/stores/news-store.ts (Next, zustand persist).
 export const useNewsStore = defineStore('news', () => {
   const selectedNewsIds = ref<string[]>([])
 

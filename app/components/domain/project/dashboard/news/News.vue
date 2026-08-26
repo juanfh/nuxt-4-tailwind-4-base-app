@@ -32,19 +32,12 @@ const [sortKeyFromParam, sortDirFromParam] = sortParam.value?.split('_') ?? [DEF
 
 const newsToDelete = ref<New | null>(null)
 
-// Copia local reactiva de `news`, igual que `usersList` en Users.vue: permite
-// eliminar una fila al instante sin depender de un refetch.
 const newsList = ref<New[]>(props.news)
 watch(() => props.news, (news) => { newsList.value = news })
 
 const newsStore = useNewsStore()
 onMounted(() => newsStore.clearNewsIds())
 
-// `DataTable` exige `TData extends {id:string}` (@tanstack/vue-table),
-// mientras que `New.id` es `number` (a diferencia de `User.id: string`) —
-// se construye una fila con `id` stringificado para la tabla, conservando el
-// `numericId` original para las acciones (editar/eliminar), mismo patrón que
-// `NewsRow = Omit<New,"id"> & {id:string}` en el News.tsx original (Next).
 interface NewsRow extends Omit<New, 'id'> {
   id: string
   numericId: number
@@ -63,8 +56,6 @@ const changeSortParam = (key: string, direction: 'asc' | 'desc' | null) => {
   router.push({ path: route.path, query })
 }
 
-// ⚠️ Mismo gotcha de FlexRender que en Users.vue (ver ese archivo): los
-// fallbacks de columna deben devolver `undefined`, nunca `''`.
 const columns: ColumnDef<NewsRow>[] = [
   {
     accessorKey: 'image',

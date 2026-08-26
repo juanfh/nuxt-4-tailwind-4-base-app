@@ -7,7 +7,6 @@ interface GetSlideByIdProps {
   token: string
 }
 
-// Port literal de src/services/project/home/getSlideById.ts (Next).
 export const getSlideById = async ({ id, token }: GetSlideByIdProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/slides/${id}`)
 

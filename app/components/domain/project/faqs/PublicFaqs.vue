@@ -6,12 +6,6 @@ interface Props {
   faqs: Faq[]
 }
 
-// Port de src/components/project/faqs/FAQs.tsx (Next). Prefijado `Public*`
-// (mismo motivo que PublicNews.vue): el dominio dashboard ya tiene un
-// componente de listado en app/components/domain/project/dashboard/faqs/
-// Faqs.vue — nombres de archivo distintos (`Faqs.vue` vs `FAQs.tsx` en Next,
-// solo diferenciados por capitalización) habrían sido una colisión frágil e
-// implícita de resolver, se evita con el mismo prefijo ya usado para `news`.
 defineProps<Props>()
 </script>
 

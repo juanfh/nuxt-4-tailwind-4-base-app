@@ -1,7 +1,4 @@
 // @vitest-environment nuxt
-//
-// Port de DeleteUser.test.ts (users), analog para news — ver el gotcha de
-// AppToast/mockNuxtImport documentado ahí y en .project_docs/tests.md.
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen, waitFor } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

@@ -1,18 +1,6 @@
 <script setup lang="ts">
 import type { New } from '#shared/types/project/new'
 
-// Port de src/app/[locale]/(project)/news/page.tsx (Next), listado público
-// (sin sesión, sin filtros de búsqueda/destacada/fecha — a diferencia del
-// listado de dashboard, ver app/pages/dashboard/news/index.vue). Reusa el
-// mismo endpoint `/api/news` que ya consume el dashboard (server/api/news/
-// index.get.ts, alcanzable sin sesión — ver .project_docs/routes.md) en vez
-// de crear uno propio.
-//
-// Sort por defecto: solo `date_desc` (un único campo), no el multi-sort
-// `featured desc, date desc` del original — el endpoint /api/news solo
-// acepta un `sort` de un campo (`"campo_orden"`, ver index.get.ts), mismo
-// límite que ya asume app/pages/dashboard/news/index.vue. Añadir soporte
-// multi-campo tocaría ese endpoint compartido; se deja fuera de alcance.
 const { t } = useI18n()
 const route = useRoute()
 const { appName } = useRuntimeConfig().public

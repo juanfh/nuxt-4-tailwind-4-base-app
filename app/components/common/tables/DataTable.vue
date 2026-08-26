@@ -33,13 +33,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const { t } = useI18n()
 
-// Port de src/components/common/tables/DataTable.tsx (Next), sin el sistema
-// de columnas congeladas (ResizeObserver + offsets sticky por columna): es
-// puro pulido visual sobre el mismo TanStack Table, no forma parte del CRUD
-// que esta fase valida contra la API real — se puede añadir más adelante si
-// un dominio futuro lo necesita. `@tanstack/vue-table` en vez de
-// `@tanstack/react-table`: misma API core (`getCoreRowModel`), expone
-// `FlexRender` en vez del hook `flexRender` de React.
 const table = useVueTable({
   get data() { return props.data },
   get columns() { return props.columns },

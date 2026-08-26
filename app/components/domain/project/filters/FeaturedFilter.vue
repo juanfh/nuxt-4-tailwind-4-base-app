@@ -12,20 +12,10 @@ const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 
-// Reka UI (a diferencia de Radix UI/React que usa el original Next) prohíbe
-// `<SelectItem value="">` en runtime ("A <SelectItem /> must have a value
-// prop that is not an empty string" — está reservado para representar
-// "sin selección"/placeholder) — se usa un sentinel `ALL_VALUE` solo para el
-// value interno del Select, traducido a/desde ausencia de `?featured=` en la
-// URL en el borde de este componente (featured/changeFeaturedParam), sin
-// tocar AppSelect/ui/select (genéricos, otros consumidores sí pueden usar
-// value: '' legítimamente).
 const ALL_VALUE = 'all'
 
 const featured = computed(() => (route.query.featured === 'true' || route.query.featured === 'false' ? route.query.featured : ALL_VALUE))
 
-// `useForm()` sin schema, solo para dar contexto ambiente a FormAppSelect
-// (useField) — mismo patrón que SearchFilter.vue/DateRangeFilter.vue.
 useForm({ initialValues: { featured: featured.value } })
 
 const options = computed<SelectOption[]>(() => props.feminine

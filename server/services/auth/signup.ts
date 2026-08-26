@@ -12,8 +12,6 @@ interface SignupProps {
   phone?: string
 }
 
-// Port literal de src/services/auth/signup.ts (Next). PATCH
-// {API_URL}/auth/signup — usa patchData pese al nombre, igual que el original.
 export const signup = async ({
   email,
   password,

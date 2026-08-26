@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// Port de src/app/[locale]/(auth)/activate/page.tsx (Next). searchParams
-// (`verify`) -> route.query.verify.
 definePageMeta({
   middleware: 'guest',
 })

@@ -197,6 +197,19 @@
 }
 
 @layer base {
+  /* Igual que <html class="h-full">/<body class="h-full flex flex-col"> en
+     next-16-tailwind-4-base-app: sin esto, una página corta deja el pie
+     (MainFooter) pegado justo debajo del contenido en vez de al fondo de la
+     pantalla. "#__nuxt" es el wrapper que Nuxt inyecta entre <body> y el
+     <div> raíz de app.vue (sin equivalente en el <body> plano de Next) — sin
+     su propia altura explícita, el h-full de app.vue/default.vue no tiene
+     contra qué resolverse. */
+  html,
+  body,
+  #__nuxt {
+    height: 100%;
+  }
+
   /* Inputs, textareas y el editor de texto enriquecido: sin anillo/offset por
      fuera del borde; el foco por teclado se marca solo con el propio borde
      en primary-500. !important necesario: input.vue/textarea.vue aplican su

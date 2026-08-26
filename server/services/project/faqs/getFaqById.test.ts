@@ -12,7 +12,6 @@ import { mapFaq } from '#shared/mappers/project/mapFaqs'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/faqs/getFaqById.test.ts (Next).
 describe('getFaqById', () => {
   beforeEach(() => {
     vi.clearAllMocks()

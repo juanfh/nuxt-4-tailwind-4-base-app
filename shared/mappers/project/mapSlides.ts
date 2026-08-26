@@ -2,7 +2,6 @@ import type { CTA } from '#shared/types/project/main'
 import type { Slide, SlideData } from '#shared/types/project/slide'
 import { mapImage } from './mapImages'
 
-// Port literal de src/mappers/project/mapSlides.ts (Next).
 export const mapCTA = (cta: any): CTA => ({
   label: cta?.label ?? '',
   link: cta?.link ?? '',

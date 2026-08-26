@@ -8,10 +8,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Port de src/components/common/RuleCheck.tsx (Next). El original sincroniza
-// `success` a un `useState` propio vía `useEffect` en vez de usarlo directo
-// — sin debounce ni animación real detrás, así que aquí un computed es
-// equivalente.
 const active = computed(() => props.success ?? false)
 </script>
 

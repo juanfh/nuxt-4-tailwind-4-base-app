@@ -4,13 +4,6 @@ import { cn } from '@/lib/utils'
 import Arrow from './components/Arrow.vue'
 import Dots from './components/Dots.vue'
 
-// Port de src/components/common/media/gallery/Hero.tsx (Next), sin
-// framer-motion (dependencia nueva sin equivalente ya instalado en este
-// proyecto): el cross-fade entre slides se resuelve con un <Transition> de
-// Vue (sin `mode`, así que enter/leave se solapan de forma nativa vía CSS,
-// dando el mismo efecto que `AnimatePresence` de framer-motion) y el
-// stagger de título/descripción/CTA con @keyframes CSS en vez de
-// motion.div con delays. Autoplay con setInterval, igual que el original.
 interface Props {
   slides: Slide[]
   hideArrows?: boolean
@@ -72,7 +65,7 @@ const currentSlide = computed(() => props.slides[current.value])
           :alt="currentSlide.data?.title ?? `Slide ${current + 1}`"
           class="absolute inset-0 w-full h-full object-cover"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
         <div v-if="currentSlide.data" class="absolute inset-0 flex flex-col gap-2 items-center justify-center px-16 text-center">
           <PageTitle
             v-if="currentSlide.data.title"

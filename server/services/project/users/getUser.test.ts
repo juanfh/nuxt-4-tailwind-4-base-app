@@ -12,7 +12,6 @@ import { mapUser } from '#shared/mappers/project/mapUsers'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/users/getUser.test.ts (Next).
 describe('getUser', () => {
   beforeEach(() => {
     vi.clearAllMocks()

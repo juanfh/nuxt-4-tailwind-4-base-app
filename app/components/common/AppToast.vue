@@ -11,8 +11,6 @@ interface ToastOptions {
   duration?: number
 }
 
-// Port de src/components/common/AppToast.tsx (Next), sobre `vue-sonner` (no
-// `sonner`, ver ui/sonner/Sonner.vue — Fase 2) en vez de un componente propio.
 const showToast = (type: ToastType, message: string, options?: ToastOptions) => {
   const getVar = (name: string) =>
     getComputedStyle(document.documentElement).getPropertyValue(name).trim()

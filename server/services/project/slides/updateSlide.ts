@@ -16,7 +16,6 @@ interface UpdateSlideProps {
   }
 }
 
-// Port literal de src/services/project/home/updateSlide.ts (Next).
 export const updateSlide = async ({ token, id, slide }: UpdateSlideProps): Promise<ServiceResult<Slide>> => {
   const baseUrl = new URL(`${process.env.API_URL}/slides/${id}`)
 

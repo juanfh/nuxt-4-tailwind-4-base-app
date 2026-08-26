@@ -1,12 +1,3 @@
-// Port de src/hooks/use-file-upload.ts (Next). `formatBytes` (shared/utils/)
-// llega auto-importado, sin sentencia import — igual que `isAdminRole`/
-// `getInitials` en el resto del proyecto. Adaptado a la Composition
-// API en vez del par `[state, actions]` de React: en vez de `getInputProps()`
-// (helper de React para esparcir props + ref sobre un <input> nativo, sin
-// equivalente idiomático en Vue) el propio componente consumidor
-// (ImageUploader.vue) enlaza `inputRef`/`accept`/`multiple` directo en su
-// `<template>` vía `ref`/`v-bind`. El resto de la lógica (validación,
-// previews, drag&drop) es un port literal.
 export interface FileMetadata {
   name: string
   size: number

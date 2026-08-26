@@ -9,9 +9,6 @@ interface AddSlideBody {
   cta?: CTA | null
 }
 
-// Sin sanitizeRichText: a diferencia de description en faqs/news,
-// SlideData.description no es contenido rich text (FormAppTextArea en
-// slideFormSchema.ts, no FormAppRichTextEditor) — ver slide/SlideForm.vue.
 export default defineEventHandler(async (event) => {
   const body = await readBody<AddSlideBody>(event)
   const { token } = await getServerSessionUser(event)

@@ -48,9 +48,6 @@ const { t } = useI18n()
 const linkPopoverOpen = ref(false)
 const linkUrlDraft = ref('')
 
-// Nuxt/Vue no tiene el problema de closures obsoletas de React con onChange
-// entre renders (props es reactivo y siempre está al día) — no hace falta el
-// onChangeRef del original, era un workaround específico de React.
 const editor = useEditor({
   extensions: [
     StarterKit.configure({
@@ -90,8 +87,6 @@ const editor = useEditor({
   onUpdate: ({ editor }) => props.onChange(editor.getHTML()),
 })
 
-// Sincroniza cambios externos (reset del form, remount con otro item...) sin
-// re-emitir onChange y sin pisar lo que el usuario está escribiendo.
 watch(() => props.value, (value) => {
   if (!editor.value) return
   if (value !== editor.value.getHTML()) {
@@ -100,9 +95,6 @@ watch(() => props.value, (value) => {
 })
 
 watch(() => props.disabled, (disabled) => {
-  // segundo argumento false: setEditable emite 'update' por defecto (incluso
-  // sin cambios reales en el contenido), lo que pisaría el value externo con
-  // el HTML ya reformateado por Tiptap en el primer mount.
   editor.value?.setEditable(!disabled, false)
 })
 

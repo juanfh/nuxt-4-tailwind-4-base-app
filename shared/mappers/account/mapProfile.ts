@@ -1,7 +1,6 @@
 import type { Profile } from '#shared/types/profile'
 import { mapImage } from '#shared/mappers/project/mapImages'
 
-// Port literal de src/mappers/account/mapProfile.ts (Next).
 export const mapProfile = (data: any): Profile => {
   return {
     id: data?.id ?? '',

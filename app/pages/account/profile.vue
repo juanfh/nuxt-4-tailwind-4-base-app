@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import type { Profile } from '#shared/types/profile'
 
-// Port de src/app/[locale]/account/profile/page.tsx (Next). El Server
-// Component original llama a getProfile() directo; aquí pasa por
-// server/api/account/profile (Nitro) vía useFetch, mismo criterio que el
-// resto de páginas del proyecto (CLAUDE.md, decisión 3). `middleware:
-// 'account'` sustituye al guard de account/layout.tsx (sesión sin
-// restricción de rol, ver app/middleware/account.ts).
 definePageMeta({
   middleware: 'account',
 })

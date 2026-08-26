@@ -50,9 +50,6 @@ const onSubmit = handleSubmit(async (data) => {
 
     AppToast.success(t(props.mode === 'create' ? 'pages.dashboard_faqs.faq_created_success' : 'pages.dashboard_faqs.faq.faq_update_success'))
 
-    // Con editInline siempre en "true" (ver decisión de alcance heredada de
-    // UserForm.vue/NewForm.vue) siempre se navega hacia atrás tras guardar,
-    // tanto en create como en edit.
     router.back()
   }
   catch {

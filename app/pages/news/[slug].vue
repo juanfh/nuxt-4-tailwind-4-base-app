@@ -2,14 +2,6 @@
 import type { NewDetail } from '#shared/types/project/new'
 import { formatDate, FormatDate } from '#shared/utils/formatDate'
 
-// Port de src/app/[locale]/(project)/news/[slug]/page.tsx (Next), detalle
-// público por slug. Usa el nuevo endpoint /api/news/slug/:slug (getNewBySlug,
-// distinto de /api/news/:id que usa el dashboard por id numérico — ver
-// server/services/project/news/getNewBySlug.ts). Sin JSON-LD (NewSchema/
-// mapSeo, no portados: este proyecto no tiene tipo/mapper SEO todavía, ver
-// shared/types/project/new.ts) ni GoToEdit (atajo de edición inline para
-// admin, tampoco portado) — mismo criterio incremental que el resto del
-// dominio `news`, se añaden si una tarea futura los pide explícitamente.
 const { t, locale } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()

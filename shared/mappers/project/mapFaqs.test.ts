@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { mapFaq, mapFaqs } from './mapFaqs'
 
-// Port de src/mappers/project/mapFaqs.test.ts (Next).
 describe('mapFaqs', () => {
   it('maps a full faq', () => {
     const result = mapFaq({ id: '1', title: 'Title', description: '<p>Body</p>' })

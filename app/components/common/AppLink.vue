@@ -14,13 +14,6 @@ const props = withDefaults(defineProps<Props>(), {
   bold: true,
 })
 
-// A diferencia de AppLink.tsx (Next, que usa `next/link` directo sobre un
-// `link` ya asumido correcto), aquí se aplica `useLocalePath()` sobre el
-// prop `link` para la rama NuxtLink — mismo patrón que
-// useIsNavActive.ts/MainNavigationButton.vue (`localePath(navItem.link)`):
-// NuxtLink no prefija de locale strings crudos por sí solo. Los llamantes
-// pasan el valor tal cual de `nav.*.link` (p. ej. `t('nav.login.link')`),
-// sin resolverlo ellos mismos.
 const localePath = useLocalePath()
 
 const linkClass = computed(() => cn(

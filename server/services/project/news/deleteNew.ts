@@ -6,7 +6,6 @@ interface DeleteNewProps {
   id: string
 }
 
-// Port literal de src/services/project/news/deleteNew.ts (Next).
 export const deleteNew = async ({ token, id }: DeleteNewProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/news/${id}`)
 

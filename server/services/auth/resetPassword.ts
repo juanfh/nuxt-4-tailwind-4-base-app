@@ -8,9 +8,6 @@ interface ResetPasswordProps {
   confirmPassword: string
 }
 
-// Port literal de src/services/auth/resetPassword.ts (Next). POST
-// {API_URL}/auth/reset-password — aplica la nueva contraseña usando el
-// `verify` (token del email) + email.
 export const resetPassword = async ({ verify, email, password, confirmPassword }: ResetPasswordProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/auth/reset-password`)
 

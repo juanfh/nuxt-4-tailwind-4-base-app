@@ -12,9 +12,6 @@ interface UpdateProfileProps {
   imageId?: number
 }
 
-// Port literal de src/services/account/updateProfile.ts (Next). PATCH
-// {API_URL}/auth/profile — sin id explícito, actualiza el perfil del
-// propietario del token.
 export const updateProfile = async ({
   token,
   name,

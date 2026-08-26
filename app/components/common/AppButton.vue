@@ -26,9 +26,6 @@ const props = withDefaults(defineProps<Props>(), {
   iconPosition: 'left',
 })
 
-// Tamaño/padding que "button" hereda de ui/button (buttonVariants, size
-// "default"); "link"/"a" no pasan por ahí, así que hay que replicarlo aquí
-// para que no se queden sin tamaño con variantes distintas de "link".
 const linkSizeClass = 'text-sm h-9 px-4 py-2'
 
 const variantClasses = {
@@ -52,10 +49,6 @@ const buttonClass = computed(() => cn(
   props.class,
 ))
 
-// ui/button.vue no define variante "link" propia con estilos de color reales
-// (bg-primary/text-primary sin resolver, ver app/assets/css/main.css) — se
-// pasa "default" para heredar solo el tamaño base y AppButton sobreescribe el
-// color con variantClasses.linkButton/linkAsLinkOrA.
 const buttonVariant = computed<ButtonVariants['variant']>(() =>
   props.variant === 'link' ? 'default' : props.variant,
 )

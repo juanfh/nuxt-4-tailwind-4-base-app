@@ -1,19 +1,4 @@
 <script setup lang="ts">
-// LoginLogout, SelectLocale y ThemeToggle ya portados (menú de
-// usuario/dashboard, selector de idioma, theme switcher). navItems
-// incluye "home" y "news" (la primera página pública fuera de home) —
-// "products" (el tercero del original) sigue pendiente: solo se portó el
-// dashboard de ese dominio, no su página pública, añadirlo ahora enlazaría
-// una ruta inexistente (404).
-//
-// La 3ª columna del grid (antes solo DesktopMenu) ahora envuelve
-// DesktopMenu + LoginLogout en un flex propio: el original (Next) añade
-// LoginLogout como un 4º hijo directo de un `grid-cols-3`, lo que en CSS
-// Grid crea una fila implícita en vez de compartir la 3ª columna — visible
-// solo si se renderiza en un navegador real, `tsc`/build no lo detectan. Se
-// evita ese bug replicándolo: LoginLogout comparte la 3ª columna con
-// DesktopMenu (que ya se autooculta en móvil vía su propio "hidden
-// md:flex"), quedando siempre a la derecha en cualquier tamaño de pantalla.
 import type { NavItem } from '#shared/types/navigation'
 
 const { t } = useI18n()
@@ -45,6 +30,8 @@ const navItems = computed<NavItem[]>(() => [
     </NuxtLink>
 
     <DesktopMenu :nav-items="navItems" />
+    <!-- LoginLogout comparte esta columna con DesktopMenu en vez de ser un hijo
+         directo del grid: como hijo directo crearía una fila implícita en CSS Grid. -->
     <div class="flex flex-row items-center justify-end gap-4">
       <LoginLogout />
       <div class="hidden md:flex items-center gap-3 flex-none">

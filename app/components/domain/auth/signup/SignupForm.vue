@@ -7,10 +7,6 @@ import { AppToast } from '@/components/common/AppToast.vue'
 import { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } from '@/components/domain/auth/password/passwordFormSchema'
 import { getSignupSchema, type SignupFormValues } from './signupFormSchema'
 
-// Port de src/components/auth/signup/SignupForm.tsx (Next). Sin captcha: el
-// original tampoco lo pide en este formulario (a diferencia de
-// login/reset). $fetch + try/catch en vez de useActionState, mismo patrón
-// que UserForm.vue/FaqForm.vue.
 const { t } = useI18n()
 
 const isLoading = ref(false)

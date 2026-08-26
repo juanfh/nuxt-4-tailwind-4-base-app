@@ -1,8 +1,4 @@
 // @vitest-environment nuxt
-//
-// Port de Users.test.ts (users), analog para news — mismo patrón de stubs
-// con data-testid para DataTable/AppPagination/DeleteNew. Ver
-// .project_docs/tests.md.
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

@@ -9,7 +9,6 @@ export interface PutDataProps {
   timeout?: number
 }
 
-// Port literal de src/services/main/putData.ts (Next).
 export const putData = async ({
   url,
   body,

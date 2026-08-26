@@ -17,7 +17,6 @@ interface AddNewProps {
   }
 }
 
-// Port literal de src/services/project/news/addNew.ts (Next).
 export const addNew = async ({ token, newsItem }: AddNewProps): Promise<ServiceResult<Record<string, unknown>>> => {
   const baseUrl = new URL(`${process.env.API_URL}/news`)
 

@@ -1,4 +1,3 @@
-// Port literal de src/stores/products-store.ts (Next, zustand persist).
 export const useProductsStore = defineStore('products', () => {
   const selectedProductsIds = ref<string[]>([])
 

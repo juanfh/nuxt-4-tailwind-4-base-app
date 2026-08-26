@@ -22,12 +22,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const { user: sessionUser } = useClientSessionUser()
-// `sessionUser` (composables/useClientSessionUser.ts) devuelve un valor
-// plano, no un ref -- `useAuth().data` sí es un ref, pero se desreferencia
-// dentro del propio composable (`session.value`) antes de devolver `user`.
-// Bug real encontrado en la Fase 9 (test de UserForm): `sessionUser.value`
-// leía `undefined` siempre, dejando canManageRole permanentemente en false
-// para cualquier rol, incluido superadmin.
 const canManageRole = computed(() => isSuperAdminRole(sessionUser?.role ?? null))
 const router = useRouter()
 
@@ -35,10 +29,6 @@ const { t } = useI18n()
 
 const isLoading = ref(false)
 
-// `defaultImage` de ImageUploader usa la imagen original (`user.image.url`),
-// no la miniatura `thumbnail.url` que sí usa <Avatar> en modo view/listado
-// (Users.vue) — igual que el original (`defaultImage={user?.image?.url}`):
-// es el punto de partida del recorte, no un thumbnail ya recortado.
 const avatar = computed(() => props.user?.image?.url)
 
 const genderOptions: SelectOption[] = [
@@ -76,10 +66,6 @@ const onImageFileChange = (file: ImageFileWithImageId | null) => {
   setFieldValue('imageId', file?.imageId)
 }
 
-// Segunda suscripción al mismo campo "password" (el propio FormAppInputPassword
-// ya llama a useField internamente) para poder leer su valor en vivo aquí y
-// alimentar los RuleCheck — vee-validate soporta varias useField() sobre el
-// mismo name compartiendo estado; equivalente a form.watch("password") (RHF).
 const { value: passwordValue } = useField<string>('password')
 
 const onSubmit = handleSubmit(async (data) => {
@@ -114,10 +100,6 @@ const onSubmit = handleSubmit(async (data) => {
 
     AppToast.success(t(props.mode === 'create' ? 'pages.users.user_created_success' : 'pages.users.user.user_update_success'))
 
-    // Con editInline siempre en "true" (ver decisión de alcance de esta
-    // fase) y sin onClose (dialogs eliminados), el original siempre toma la
-    // rama router.back() tanto en create como en edit — se simplifica a eso
-    // directamente, sin la rama form.reset()/onUserUpdate ahora muerta.
     router.back()
   }
   catch (error) {

@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// Port de MainFooter.tsx (Next). navItems solo incluye "faqs" por ahora
-// (petición explícita de esta tarea) — "demo" (el otro item del original) no
-// se porta: la página /demo no existe en este proyecto (dominio demo no
-// migrado, ver CLAUDE.md "Decisiones pendientes").
 import type { NavItem } from '#shared/types/navigation'
 
 const { t } = useI18n()

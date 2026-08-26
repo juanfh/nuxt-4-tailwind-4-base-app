@@ -16,8 +16,6 @@ const router = useRouter()
 const dateFrom = computed(() => (typeof route.query.date_from === 'string' ? route.query.date_from : ''))
 const dateTo = computed(() => (typeof route.query.date_to === 'string' ? route.query.date_to : ''))
 
-// `useForm()` sin schema, solo para dar contexto ambiente a FormAppDatePicker
-// (useField) — mismo patrón que SearchFilter.vue.
 useForm({ initialValues: { dateFrom: dateFrom.value, dateTo: dateTo.value } })
 const { value: dateFromValue, setValue: setDateFromValue } = useField<string>('dateFrom')
 const { value: dateToValue, setValue: setDateToValue } = useField<string>('dateTo')

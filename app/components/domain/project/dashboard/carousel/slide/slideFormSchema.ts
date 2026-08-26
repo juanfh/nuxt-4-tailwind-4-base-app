@@ -2,18 +2,7 @@ import { z } from 'zod'
 
 type TMain = (key: string, params?: Record<string, unknown>) => string
 
-// Port literal de src/components/project/dashboard/carousel/slide/slideFormSchema.ts
-// (Next), salvo el `superRefine` que exige `imageId` (ver la nota de
-// `imageId` abajo). `tMain` recibe `useI18n().t` (no un traductor ya
-// acotado al namespace `main`, misma nota que en faqFormSchema.ts/
-// newFormSchema.ts), así que cada mensaje se referencia con el prefijo
-// `main.` completo.
 export const getSlideSchema = (tMain: TMain) => z.object({
-  // Igual que `imageId` en newFormSchema.ts: opcional en el schema, sin
-  // `superRefine` que lo exija — mismo criterio ya establecido para
-  // NewForm.vue (la imagen de portada tampoco es obligatoria a nivel de
-  // validación pese a que `New.image`/`Slide.image` son no-nullable en el
-  // tipo de dominio), en vez del `superRefine`+`image_required` del original.
   imageId: z.number().optional(),
   title: z.string().min(1, { message: tMain('main.title_required') }),
   description: z.string().optional(),

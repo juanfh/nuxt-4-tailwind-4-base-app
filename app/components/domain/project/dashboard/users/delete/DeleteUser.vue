@@ -19,11 +19,6 @@ const router = useRouter()
 const open = ref(!props.isButton)
 const isLoading = ref(false)
 
-// Port de src/components/project/dashboard/users/delete/DeleteUser.tsx
-// (Next). Sin server action + FormData con el token: aquí el cliente llama
-// directo a server/api/users/[id].delete.ts (Nitro), que resuelve el token
-// de sesión en el propio handler vía getServerSessionUser(event) — ver
-// server/api/users/[id].delete.ts.
 const onConfirmDeleteUser = async () => {
   isLoading.value = true
   try {

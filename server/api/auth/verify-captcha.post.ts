@@ -4,10 +4,6 @@ interface VerifyCaptchaBody {
   recaptchaToken?: string
 }
 
-// Puerta de captcha independiente para LoginForm.vue: en Next,
-// verifyRecaptchaAction (src/components/auth/login/actions.ts) solo valida
-// el captcha — el login en sí lo dispara el propio cliente vía
-// signIn("credentials", ...) contra authOptions.ts, fuera de este endpoint.
 export default defineEventHandler(async (event) => {
   const { recaptchaToken } = await readBody<VerifyCaptchaBody>(event)
 

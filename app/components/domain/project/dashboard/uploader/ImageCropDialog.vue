@@ -16,13 +16,6 @@ const emit = defineEmits<{ cancel: [], confirm: [pixelCrop: PixelCrop] }>()
 
 const { t } = useI18n()
 
-// Port de src/components/project/dashboard/uploader/ImageCropDialog.tsx
-// (Next), sobre `vue-advanced-cropper` en vez de `react-easy-crop` (sin
-// puerto Vue directo de esa librería) — misma UX (stencil circular/rectangular
-// + zoom), API distinta: el resultado no llega como estado controlado
-// (crop/zoom en el padre) sino vía el evento `change`, y el zoom es relativo
-// (`cropperRef.zoom(factor)`), no un valor absoluto — de ahí el cálculo de
-// `factor` en `onZoomInput` en vez de asignar `zoom.value` directo.
 const cropperRef = useTemplateRef('cropperRef')
 const zoomValue = ref(1)
 const lastResult = ref<CropperResult | null>(null)

@@ -1,4 +1,3 @@
-// Port literal de src/stores/slides-store.ts (Next, zustand persist).
 export const useSlidesStore = defineStore('slides', () => {
   const selectedSlidesIds = ref<string[]>([])
 

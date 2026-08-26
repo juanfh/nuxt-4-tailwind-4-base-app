@@ -16,13 +16,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Port de src/components/account/ProfileForm.tsx (Next), simplificado: con
-// EDIT_INLINE fijo en "true" (mismo criterio que UserForm.vue, ver decisión
-// de alcance de la Fase 8), el original siempre acaba en mode="edit"/
-// editable=true a través de ProfileFormContainer — se porta directo ese
-// único camino, sin ProfileFormContainer/EditProfileForm/AlertDialog (el
-// modo "view" + editar-en-modal, ver decisión 45 de .project_docs/routes.md)
-// ni el prop `mode`.
 const { t } = useI18n()
 const { getSession } = useAuth()
 
@@ -76,11 +69,6 @@ const onSubmit = handleSubmit(async (data) => {
 
     AppToast.success(t('pages.account.profile.profile_update_success'))
 
-    // El callback `session` de authOptions.ts rehidrata con getMe() en cada
-    // resolución de sesión (ver .project_docs/auth.md) — a diferencia del
-    // `update()` de next-auth/react (Next), que exige fusionar a mano los
-    // campos cambiados en el objeto de sesión, aquí basta con forzar una
-    // nueva resolución para que la sesión recoja el perfil ya actualizado.
     await getSession()
   }
   catch {

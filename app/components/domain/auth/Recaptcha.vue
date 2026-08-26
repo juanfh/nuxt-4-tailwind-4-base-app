@@ -1,8 +1,5 @@
 <script setup lang="ts">
-// Port de src/components/recaptcha/Recaptcha.tsx (Next): inyecta el script
-// de Google reCAPTCHA v3 en el DOM al montar, sin salida visual (mismo
-// dedupe de tags duplicados que el original). `captchaSiteKey` de
-// runtimeConfig.public, no process.env directo — ver app/utils/captcha.ts.
+
 const { public: { captchaSiteKey } } = useRuntimeConfig()
 
 let interval: ReturnType<typeof setInterval> | undefined

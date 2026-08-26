@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import type { Faq } from '#shared/types/project/faq'
 
-// Port de app/pages/dashboard/news/index.vue (analog para faqs). Sin query
-// params (page/limit/sort/search): la API de faqs no pagina ni ordena — ver
-// server/services/project/faqs/getFaqs.ts.
 definePageMeta({
   layout: 'dashboard',
   middleware: 'dashboard',
 })
 
 const { t } = useI18n()
-// `useRuntimeConfig()` debe leerse aquí, no dentro del getter perezoso de
-// useSeoMeta — mismo gotcha documentado en dashboard/news/index.vue.
 const { appName } = useRuntimeConfig().public
 
 const { data } = await useFetch<Faq[]>('/api/faqs')

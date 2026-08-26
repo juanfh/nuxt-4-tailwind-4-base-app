@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { mapUser, mapUsers } from './mapUsers'
 
-// Port de src/mappers/project/mapUsers.test.ts (Next).
 describe('mapUsers', () => {
   it('maps user with no avatar to null image', () => {
     expect(

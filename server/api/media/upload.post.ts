@@ -6,12 +6,6 @@ const readNumberField = (formData: FormData, name: string): number | undefined =
   return typeof value === 'string' && value ? Number(value) : undefined
 }
 
-// Port de src/components/project/dashboard/uploader/actions.ts (`uploadImage`
-// server action, Next) como endpoint Nitro — `readFormData(event)` (h3) da
-// directo un `FormData` nativo, sin necesidad de reconstruirlo a mano a
-// partir de `readMultipartFormData`. Mismo patrón que el resto de
-// `server/api/users/*`: resuelve el token de sesión en el propio handler vía
-// `getServerSessionUser(event)`, ver CLAUDE.md decisión 48.
 export default defineEventHandler(async (event) => {
   const formData = await readFormData(event)
 

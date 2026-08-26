@@ -11,8 +11,6 @@ interface SignupBody {
   phone?: string
 }
 
-// Port de src/components/auth/signup/actions.ts (Next, signupAction). Sin
-// captcha: el original tampoco lo pide en este formulario.
 export default defineEventHandler(async (event) => {
   const body = await readBody<SignupBody>(event)
 

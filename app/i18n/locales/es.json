@@ -288,6 +288,16 @@
         "password_update_success": "Contraseña cambiada",
         "password_update_error": "Error al cambiar la contraseña"
       }
+    },
+    "not_access": {
+      "seo_title": "Sin acceso",
+      "seo_description": "No tienes acceso a esta sección de Mi Aplicación.",
+      "title": "Sin acceso",
+      "message": "Lo sentimos, no tienes los permisos necesarios para acceder a esta sección."
+    },
+    "not_found": {
+      "title": "Página no encontrada",
+      "message": "Lo sentimos, la página que buscas no existe."
     }
   },
   "pagination": {

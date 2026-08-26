@@ -14,7 +14,6 @@ import { updateNew } from './updateNew'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/news/updateNew.test.ts (Next).
 describe('updateNew', () => {
   beforeEach(() => {
     vi.clearAllMocks()

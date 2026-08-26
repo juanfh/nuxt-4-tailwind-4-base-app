@@ -10,12 +10,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Port simplificado de src/components/project/dashboard/users/components/Avatar.tsx
-// (Next): sin ImageLoader/ImageBase/NoImage (subsistema de media sobre
-// next/image, fuera de alcance de esta fase — ver la decisión de dejar
-// fuera la subida/recorte de avatar). Un <img> nativo con fallback a
-// Initials en error cubre el único caso que este slice necesita: mostrar
-// una imagen ya existente.
 const failed = ref(false)
 watch(() => props.image, () => { failed.value = false })
 </script>

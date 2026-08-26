@@ -16,10 +16,6 @@ import { cn } from '@/lib/utils'
 const props = defineProps<ToasterProps>()
 const delegatedProps = reactiveOmit(props, 'class', 'toastOptions')
 
-// Equivalente a `const { theme = "system" } = useTheme()` +
-// `theme={theme as ToasterProps["theme"]}` en sonner.tsx (Next): sincroniza
-// el tema de vue-sonner con ThemeToggle.vue/@nuxtjs/color-mode en vez de
-// dejarlo en su valor por defecto (no reactivo al tema real de la app).
 const colorMode = useColorMode()
 const theme = computed(() => (colorMode.value === 'dark' ? 'dark' : 'light') as NonNullable<ToasterProps['theme']>)
 </script>

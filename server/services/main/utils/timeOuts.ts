@@ -1,4 +1,3 @@
-// Port literal de src/services/main/utils/timeOuts.ts (Next).
 export const CACHE_TIMES = {
   STATIC: 3600, // 1 hour - static content
   DYNAMIC: 60, // 1 minute - dynamic content

@@ -9,7 +9,6 @@ export interface DeleteDataProps {
   timeout?: number
 }
 
-// Port literal de src/services/main/deleteData.ts (Next).
 export const deleteData = async ({
   url,
   body,

@@ -18,15 +18,12 @@ const localePath = useLocalePath()
 
 const faqToDelete = ref<Faq | null>(null)
 
-// Copia local reactiva de `faqs`, mismo patrón que `newsList` en News.vue.
 const faqsList = ref<Faq[]>(props.faqs)
 watch(() => props.faqs, (faqs) => { faqsList.value = faqs })
 
 const faqsStore = useFaqsStore()
 onMounted(() => faqsStore.clearFaqsIds())
 
-// `Faq.id` ya es `string` (a diferencia de `New.id: number`) — sin necesidad
-// del wrapper `NewsRow`/`numericId` que usa News.vue.
 const columns: ColumnDef<Faq>[] = [
   {
     accessorKey: 'title',

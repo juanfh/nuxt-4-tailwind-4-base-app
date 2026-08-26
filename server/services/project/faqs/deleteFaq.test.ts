@@ -10,7 +10,6 @@ import { deleteFaq } from './deleteFaq'
 import { throwCatchError } from '../../main/utils/printErrors'
 import { server } from '../../../../test/msw/server'
 
-// Port de src/services/project/faqs/deleteFaq.test.ts (Next).
 describe('deleteFaq', () => {
   beforeEach(() => {
     vi.clearAllMocks()

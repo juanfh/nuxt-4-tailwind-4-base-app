@@ -5,8 +5,6 @@ import { Loader2Icon } from '@lucide/vue'
 import { AppToast } from '@/components/common/AppToast.vue'
 import { getRequestSchema, type RequestFormValues } from './requestFormSchema'
 
-// Port de src/components/auth/reset/request/RequestForm.tsx (Next). $fetch +
-// try/catch en vez de useActionState, mismo patrón que UserForm.vue.
 const { t } = useI18n()
 
 const sent = ref(false)

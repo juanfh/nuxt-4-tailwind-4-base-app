@@ -10,10 +10,6 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Prefijado `Carousel` (no `Thumbnail` a secas) por la misma colisión de
-// nombre global entre dominios que `news`/`faqs` — ver .project_docs/routes.md,
-// «Puerto del dominio news». Mismo patrón que components/Thumbnail.vue de
-// news: <img> nativo con fallback en error, sin Figure/ImageLoader/NoImage.
 const failed = ref(false)
 watch(() => props.image, () => { failed.value = false })
 </script>

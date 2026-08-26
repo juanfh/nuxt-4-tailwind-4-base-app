@@ -1,11 +1,4 @@
 // @vitest-environment nuxt
-//
-// Port de src/components/project/dashboard/users/Users.test.tsx (Next),
-// adaptado a editInline="true" fijo (ver decisión 45, CLAUDE.md): sin el
-// flujo useActionState/EditUserForm en modal — "Editar" siempre navega a la
-// página de detalle. DataTable/AppPagination/DeleteUser se mockean como
-// stubs con data-testid, mismo patrón que Next mockeaba DataTable/
-// AppPagination/EditUserForm. Ver .project_docs/tests.md.
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { screen } from '@testing-library/vue'
 import userEvent from '@testing-library/user-event'

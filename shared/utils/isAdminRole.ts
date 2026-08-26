@@ -1,4 +1,3 @@
-// Port literal de src/utils/isAdminRole.ts (Next).
 export const ADMIN_ROLES = ['admin', 'superadmin']
 export const SUPERADMIN_ROLE = 'superadmin'
 

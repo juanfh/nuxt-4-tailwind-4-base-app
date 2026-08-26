@@ -6,7 +6,6 @@ interface DeleteUserProps {
   id: string
 }
 
-// Port literal de src/services/project/users/deleteUser.ts (Next).
 export const deleteUser = async ({ token, id }: DeleteUserProps) => {
   const baseUrl = new URL(`${process.env.API_URL}/users/${id}`)
 

@@ -32,23 +32,12 @@ const [sortKeyFromParam, sortDirFromParam] = sortParam.value?.split('_') ?? [DEF
 
 const userToDelete = ref<User | null>(null)
 
-// Copia local reactiva de `users`, igual que `usersList`/`setUsersList` en
-// Users.tsx (Next): permite eliminar una fila al instante (DeleteUser splice
-// local) sin depender de que la página vuelva a pedir la lista a la API.
-// Se resincroniza cuando `users` cambia (nueva navegación con distinta
-// página/orden/búsqueda ⇒ nuevo useFetch en la página ⇒ nuevo array aquí).
 const usersList = ref<User[]>(props.users)
 watch(() => props.users, (users) => { usersList.value = users })
 
 const usersStore = useUsersStore()
 onMounted(() => usersStore.clearUsersIds())
 
-// Port de src/components/project/dashboard/users/Users.tsx (Next), con
-// editInline fijado a "true" (ver decisión de alcance de la Fase 8): sin el
-// botón/acción "Ver" ni el flujo de EditUserForm en modal — Editar siempre
-// navega a la página de detalle. La búsqueda/orden/paginación se resuelven
-// contra la query de la propia ruta, no contra estado local (server/api/users
-// ya recibe esos mismos query params vía useFetch en la página).
 const changeSortParam = (key: string, direction: 'asc' | 'desc' | null) => {
   const query = { ...route.query }
   if (key === DEFAULT_SORT_KEY && direction === DEFAULT_SORT_DIR) {
@@ -60,15 +49,6 @@ const changeSortParam = (key: string, direction: 'asc' | 'desc' | null) => {
   router.push({ path: route.path, query })
 }
 
-// ⚠️ Gotcha (Fase 8): `FlexRender` (@tanstack/vue-table) invoca cada `cell`
-// vía `h(cell, context)` — Vue lo trata como un componente funcional. Un
-// componente funcional que devuelve `''` (string vacío) se normaliza de
-// forma distinta en SSR que en cliente ("Hydration completed but contains
-// mismatches", confirmado con headless Chrome contra la API real, sin
-// crashear pero sí con una advertencia real) — devolver `undefined` en su
-// lugar es la forma soportada de "no renderizar nada" y resuelve el
-// mismatch. No aplica a `row.original.phone` (puede ser `undefined` de
-// origen, nunca `''`), solo a los cálculos propios con fallback ternario.
 const columns: ColumnDef<User>[] = [
   {
     accessorKey: 'image',
